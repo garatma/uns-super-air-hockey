@@ -8,9 +8,14 @@ public class Player1Controller : MonoBehaviour
 
 	private Vector3 movement;
 
+    private float movH;
+
 	void FixedUpdate()
 	{
-		float movH = Input.GetAxis("Horizontal");
+        //movH = Input.GetAxis("Horizontal");
+        movH = 0;
+      
+        Debug.Log(movH);
 
 		switch(game.state)
 		{
@@ -37,16 +42,19 @@ public class Player1Controller : MonoBehaviour
 				move(movH);
 				break;
 		}
+        movH = 0;
 	}
+
+    
 
 	void move(float movH)
 	{
 		movement = new Vector3(movH, 0.0f, 0.0f);
 		GetComponent<Rigidbody>().position += movement * game.player1Reaction;
 		GetComponent<Rigidbody>().position = new Vector3(
-				Mathf.Clamp(GetComponent<Rigidbody>().position.x,-1.5f,1.5f),
+				Mathf.Clamp(GetComponent<Rigidbody>().position.x,-30f,30f),
 				0.0f,
-				-2.75f);
+				-5f);
 	}
 
 }

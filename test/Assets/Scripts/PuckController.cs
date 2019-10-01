@@ -50,9 +50,9 @@ public class PuckController : MonoBehaviour
 	{
 		GetComponent<Rigidbody>().position += movement * game.puckReaction;
 		GetComponent<Rigidbody>().position = new Vector3(
-			Mathf.Clamp(GetComponent<Rigidbody>().position.x, -1.7f, 1.7f),
-			-0.32f,
-			Mathf.Clamp(GetComponent<Rigidbody>().position.z, -4f, 4f)
+			Mathf.Clamp(GetComponent<Rigidbody>().position.x, -50f, 50f),
+			0.4f,
+			Mathf.Clamp(GetComponent<Rigidbody>().position.z, -100f, 100f)
 		);
 	}
 }

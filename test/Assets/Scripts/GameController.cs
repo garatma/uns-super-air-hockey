@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
 	public UnityEngine.UI.Text player2GUIGoals;
 	public int player2Goals;
 
+    public UnityEngine.UI.Button rightButton;
+    public UnityEngine.UI.Button leftButton;
+
 	private int puckInGame;
 
 	public enum States
@@ -39,13 +42,15 @@ public class GameController : MonoBehaviour
 
 	void Start()
 	{
+       
+
 		state = States.init;
 
 		resetPositions(-1.0f);
 
-		player1Reaction = 0.1f;
-		player2Reaction = 0.1f;
-		puckReaction  = 0.1f;
+		player1Reaction = 0.2f;
+		player2Reaction = 0.2f;
+		puckReaction  = 0.2f;
 
 		puckInGame = 1;
 		player1Goals = 0;
@@ -98,9 +103,9 @@ public class GameController : MonoBehaviour
 
 	void resetPositions(float puckPosition)
 	{
-		player1.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, -2.75f);
-		player2.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, 2.75f);
-		puck.GetComponent<Rigidbody>().position = new Vector3(0.0f, -0.32f, puckPosition);
+		player1.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, -6f);
+		player2.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, 6f);
+		puck.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, puckPosition);
 	}
 }
 
