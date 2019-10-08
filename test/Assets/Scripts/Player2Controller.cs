@@ -11,13 +11,14 @@ public class Player2Controller : MonoBehaviour
     void FixedUpdate()
     {
         float movH = Input.GetAxis("Horizontal2");
-        
+		if ( movH > 0 ) movH = 1;
+		else if ( movH < 0 ) movH = -1;
 
         switch(game.state)
         {
             case GameController.States.player2Serves:
                 move(movH);
-                if ( Input.GetAxis("Vertical2") != 0 )
+				if ( game.player2ClickedButton() )
                     game.state = GameController.States.player2Serving;
                 break;
 
@@ -45,9 +46,9 @@ public class Player2Controller : MonoBehaviour
         movement = new Vector3(movH, 0.0f, 0.0f);
         GetComponent<Rigidbody>().position += movement * game.player2Reaction;
         GetComponent<Rigidbody>().position = new Vector3(
-                Mathf.Clamp(GetComponent<Rigidbody>().position.x,-30f,30f),
+                Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.3f,3.3f),
                 0.0f,
-                5f);
+                6f);
     }
 
 }

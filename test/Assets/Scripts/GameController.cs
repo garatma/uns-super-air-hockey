@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -19,8 +20,11 @@ public class GameController : MonoBehaviour
 	public UnityEngine.UI.Text player2GUIGoals;
 	public int player2Goals;
 
-    public UnityEngine.UI.Button rightButton;
-    public UnityEngine.UI.Button leftButton;
+    public Button player1ServeButton;
+    public Button player2ServeButton;
+
+	private bool player1served = false,
+				 player2served = false;
 
 	private int puckInGame;
 
@@ -42,7 +46,10 @@ public class GameController : MonoBehaviour
 
 	void Start()
 	{
-       
+		player1ServeButton.onClick.AddListener(buttonPlayer1ServeListener);
+		player2ServeButton.onClick.AddListener(buttonPlayer2ServeListener);
+		player1ServeButton.interactable = true;
+		player2ServeButton.interactable = false;
 
 		state = States.init;
 
@@ -79,16 +86,16 @@ public class GameController : MonoBehaviour
 				else if ( state == States.player1Scores )
 				{
 					// gol del player1
-					// state = States.waiting;
 					state = States.player2Serves;
-					resetPositions(1.0f);
+					resetPositions(3.0f);
+					player2ServeButton.interactable = true;
 				}
 				else
 				{
 					// gol del player2
-					// state = States.waiting;
 					state = States.player1Serves;
-					resetPositions(-1.0f);
+					resetPositions(-3.0f);
+					player1ServeButton.interactable = true;
 				}
 				break;
 
@@ -107,5 +114,32 @@ public class GameController : MonoBehaviour
 		player2.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, 6f);
 		puck.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, puckPosition);
 	}
+
+	public void buttonPlayer1ServeListener()
+	{
+		player1served = true;
+		player1ServeButton.interactable = false;
+	}
+
+	public void buttonPlayer2ServeListener()
+	{
+		player2served = true;
+		player2ServeButton.interactable = false;
+	}
+
+	public bool player1ClickedButton()
+	{
+		bool retorno = player1served;
+		player1served = false;
+		return retorno;
+	}
+
+	public bool player2ClickedButton()
+	{
+		bool retorno = player2served;
+		player2served = false;
+		return retorno;
+	}
+
 }
 

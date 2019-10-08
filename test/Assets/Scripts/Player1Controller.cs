@@ -8,20 +8,22 @@ public class Player1Controller : MonoBehaviour
 
 	private Vector3 movement;
 
-    private float movH;
-
 	void FixedUpdate()
 	{
-        //movH = Input.GetAxis("Horizontal");
-        movH = 0;
+		float movH = 0;
+		if ( Input.GetButton("Fire1") )
+		{
+			if ( Input.mousePosition.x < Screen.width/2 )
+				movH = -1;
+			else
+				movH = 1;
+		}
       
-        Debug.Log(movH);
-
 		switch(game.state)
 		{
 			case GameController.States.player1Serves:
 				move(movH);
-				if ( Input.GetAxis("Vertical") != 0 )
+				if ( game.player1ClickedButton() )
 					game.state = GameController.States.player1Serving;
 				break;
 
@@ -42,19 +44,16 @@ public class Player1Controller : MonoBehaviour
 				move(movH);
 				break;
 		}
-        movH = 0;
 	}
-
-    
 
 	void move(float movH)
 	{
 		movement = new Vector3(movH, 0.0f, 0.0f);
 		GetComponent<Rigidbody>().position += movement * game.player1Reaction;
 		GetComponent<Rigidbody>().position = new Vector3(
-				Mathf.Clamp(GetComponent<Rigidbody>().position.x,-30f,30f),
+				Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.3f,3.3f),
 				0.0f,
-				-5f);
+				-6f);
 	}
 
 }
