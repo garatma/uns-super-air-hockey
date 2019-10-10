@@ -8,22 +8,26 @@ public class Player1Controller : MonoBehaviour
 
 	private Vector3 movement;
 
-	void FixedUpdate()
+    void FixedUpdate()
 	{
-		float movH = 0;
-		if ( Input.GetButton("Fire1") )
+
+        float movH = 0;
+        
+        if ( Input.GetButton("Fire1") )
 		{
-			if ( Input.mousePosition.x < Screen.width/2 )
-				movH = -1;
-			else
-				movH = 1;
+			movH = -1;
 		}
-      
-		switch(game.state)
+
+        else if (Input.GetButton("Fire2"))
+        {
+            movH = 1;
+        }
+
+        switch (game.state)
 		{
 			case GameController.States.player1Serves:
 				move(movH);
-				if ( game.player1ClickedButton() )
+				if (Input.GetButton("Fire3"))
 					game.state = GameController.States.player1Serving;
 				break;
 

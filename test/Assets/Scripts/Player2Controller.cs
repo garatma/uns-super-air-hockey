@@ -8,17 +8,17 @@ public class Player2Controller : MonoBehaviour
 
     private Vector3 movement;
 
+    private float movLeft_Right = 1;
+
     void FixedUpdate()
     {
-        float movH = Input.GetAxis("Horizontal2");
-		if ( movH > 0 ) movH = 1;
-		else if ( movH < 0 ) movH = -1;
-
+        float movH = movLeft_Right; 
+        
         switch(game.state)
         {
             case GameController.States.player2Serves:
                 move(movH);
-				if ( game.player2ClickedButton() )
+				if (Input.GetButton("Fire3"))
                     game.state = GameController.States.player2Serving;
                 break;
 
@@ -49,6 +49,14 @@ public class Player2Controller : MonoBehaviour
                 Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.3f,3.3f),
                 0.0f,
                 6f);
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        GameObject obj = collision.gameObject;
+
+        if (collision.gameObject.tag == "Side")
+            movLeft_Right *= -1;
     }
 
 }
