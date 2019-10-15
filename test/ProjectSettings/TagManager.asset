@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Fondo
   - Costado
-  - ArcoPlayer2
-  - ArcoPlayer1
+  - ArcoIA
+  - ArcoJugador1
+  - Jugador
+  - ControladorJuego
   layers:
   - Default
   - TransparentFX
