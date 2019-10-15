@@ -6,139 +6,112 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 	public GameObject player1;
-	public float player1Reaction;
+	public float reaccionPlayer1;
 
 	public GameObject player2;
-	public float player2Reaction;
+	public float reaccionPlayer2;
 
-	public GameObject puck;
-	public float puckReaction;
+	public GameObject disco;
+	public float reaccionDisco;
 
-	public UnityEngine.UI.Text player1GUIGoals;
-	public int player1Goals;
+	public UnityEngine.UI.Text [] golesGUIPlayer1 = {null,null};
+	public int golesPlayer1;
 
-	public UnityEngine.UI.Text player2GUIGoals;
-	public int player2Goals;
+	public UnityEngine.UI.Text [] golesGUIPlayer2 = {null,null};
+	public int golesPlayer2;
 
-    public Button player1ServeButton;
-    public Button player2ServeButton;
+	public UnityEngine.UI.Text mensaje_fin;
 
-	private bool player1served = false,
-				 player2served = false;
-
-	private int puckInGame;
-
-	public enum States
+	public enum Estados
 	{
-		init,
-		player1Serves,
-		player1Serving,
-		player2Serves,
-		player2Serving,
-		player1Scores,
-		player2Scores,
-		playing,
-		waiting,
-		end
+		inicio,
+		sacaPlayer1,
+		sacandoPlayer1,
+		sacaPlayer2,
+		sacandoPlayer2,
+		golPlayer1,
+		golPlayer2,
+		jugando,
+		fin,
+		esperandoReinicio
 	}
 
-	public States state;
+	public Estados estado;
 
 	void Start()
 	{
-		player1ServeButton.onClick.AddListener(buttonPlayer1ServeListener);
-		player2ServeButton.onClick.AddListener(buttonPlayer2ServeListener);
-		player1ServeButton.interactable = true;
-		player2ServeButton.interactable = false;
+		estado = Estados.inicio;
 
-		state = States.init;
-
-		resetPositions(-1.0f);
-
-		player1Reaction = 0.2f;
-		player2Reaction = 0.2f;
-		puckReaction  = 0.2f;
-
-		puckInGame = 1;
-		player1Goals = 0;
-		player2Goals = 0;
-
-		state = States.player1Serves;
+		reaccionPlayer1 = 0.2f;
+		reaccionPlayer2 = 0.2f;
+		reaccionDisco  = 0.4f;
 	}
 
 	void Update()
 	{
-		player1GUIGoals.text = "Goles Player 1: "+player1Goals.ToString();
-		player2GUIGoals.text = "Goles Player 2: "+player2Goals.ToString();
+		golesGUIPlayer1[0].text = golesPlayer1.ToString();
+		golesGUIPlayer2[0].text = golesPlayer1.ToString();
 
-		switch (state)
+ 		golesGUIPlayer1[1].text = golesPlayer2.ToString();
+		golesGUIPlayer2[1].text = golesPlayer2.ToString();
+
+		if (Application.platform == RuntimePlatform.Android)
 		{
-			case States.player2Scores:
-			case States.player1Scores:
-				puckInGame++;
+            if ( Input.GetKey(KeyCode.Escape) )
+			{}
 
-				if ( player1Goals == 10 || player2Goals == 10 )
+			if ( Input.GetKey(KeyCode.Home) )
+			{}
+		}
+
+		switch (estado)
+		{
+			case Estados.inicio:
+				mensaje_fin.text = "";
+				resetearPosiciones(-3.0f);
+				golesPlayer1 = 0;
+				golesPlayer2 = 0;
+				estado = Estados.sacaPlayer1;
+				break;
+
+			case Estados.golPlayer2:
+			case Estados.golPlayer1:
+
+				if ( golesPlayer1 == 1 || golesPlayer2 == 1 )
 				{
 					// juego terminado
-					state = States.end;
-					resetPositions(0.0f);
+					estado = Estados.fin;
+					resetearPosiciones(0.0f);
 				}
-				else if ( state == States.player1Scores )
+				else if ( estado == Estados.golPlayer1 )
 				{
 					// gol del player1
-					state = States.player2Serves;
-					resetPositions(3.0f);
-					player2ServeButton.interactable = true;
+					estado = Estados.sacaPlayer2;
+					resetearPosiciones(3.0f);
 				}
 				else
 				{
 					// gol del player2
-					state = States.player1Serves;
-					resetPositions(-3.0f);
-					player1ServeButton.interactable = true;
+					estado = Estados.sacaPlayer1;
+					resetearPosiciones(-3.0f);
 				}
 				break;
 
-			// case States.waiting:
-			// case States.end:
-			// 	if ( player1Goals == 10 )
-			// 		// imprimir gana player1
-			// 	else
-			// 		// imprimir gana player2
+			case Estados.fin:
+				if ( golesPlayer1 == 1 )
+					mensaje_fin.text = "Ganó el jugador 1! Apriete algún botón para reiniciar.";
+			 	else
+					mensaje_fin.text = "Ganó el jugador 2! Apriete algún botón para reiniciar.";
+				estado = Estados.esperandoReinicio;
+				break;
 		}
 	}
 
-	void resetPositions(float puckPosition)
+	void resetearPosiciones(float discoPosition)
 	{
 		player1.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, -6f);
 		player2.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, 6f);
-		puck.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, puckPosition);
-	}
-
-	public void buttonPlayer1ServeListener()
-	{
-		player1served = true;
-		player1ServeButton.interactable = false;
-	}
-
-	public void buttonPlayer2ServeListener()
-	{
-		player2served = true;
-		player2ServeButton.interactable = false;
-	}
-
-	public bool player1ClickedButton()
-	{
-		bool retorno = player1served;
-		player1served = false;
-		return retorno;
-	}
-
-	public bool player2ClickedButton()
-	{
-		bool retorno = player2served;
-		player2served = false;
-		return retorno;
+		disco.GetComponent<Rigidbody>().position = new Vector3(0.0f, 0.0f, discoPosition);
 	}
 
 }

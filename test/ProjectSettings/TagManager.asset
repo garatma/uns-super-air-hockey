@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player1Goal
-  - Player2Goal
-  - Side
-  - Front
+  - Fondo
+  - Costado
+  - ArcoPlayer2
+  - ArcoPlayer1
   layers:
   - Default
   - TransparentFX

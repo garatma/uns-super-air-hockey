@@ -17,10 +17,8 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
     Vuforia.UnityExtensions.dll:
     - Vuforia.ImageTargetBehaviour
@@ -68,55 +66,51 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9766}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9790}
+      Script: {instanceID: 9780}
     - Class: 114
-      Script: {instanceID: 9812}
+      Script: {instanceID: 9802}
     - Class: 114
-      Script: {instanceID: 9908}
+      Script: {instanceID: 9898}
     - Class: 114
-      Script: {instanceID: 9910}
+      Script: {instanceID: 9900}
     - Class: 114
-      Script: {instanceID: 9968}
+      Script: {instanceID: 9958}
     - Class: 114
-      Script: {instanceID: 9980}
+      Script: {instanceID: 9970}
     - Class: 114
-      Script: {instanceID: 10008}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 10018}
+      Script: {instanceID: 10224}
     - Class: 114
-      Script: {instanceID: 10234}
+      Script: {instanceID: 10362}
     - Class: 114
-      Script: {instanceID: 10372}
+      Script: {instanceID: 10506}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10528}
+      Script: {instanceID: 10634}
     - Class: 114
-      Script: {instanceID: 10644}
+      Script: {instanceID: 10656}
+    - Class: 114
+      Script: {instanceID: 10664}
     - Class: 114
       Script: {instanceID: 10666}
     - Class: 114
-      Script: {instanceID: 10674}
+      Script: {instanceID: 11116}
     - Class: 114
-      Script: {instanceID: 10676}
+      Script: {instanceID: 11402}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11412}
+      Script: {instanceID: 11762}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11750}
-    - Class: 114
-      Script: {instanceID: 11772}
-    - Class: 114
-      Script: {instanceID: 11774}
-    - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12268}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,8 +120,6 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -152,7 +144,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 87ff7db862bc5c4584bd467effdd360d
+      Hash: d0ddab4dd3781c88fa607402c7834824
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameController
@@ -380,7 +372,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: a1bd3e717247888e9ffd0f82589276e1
+      Hash: 8fae61c6bb45cdf3f4678ca4a4327208
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player1Controller
@@ -986,13 +978,13 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: a1bd3e717247888e9ffd0f82589276e1
+      Hash: 8fae61c6bb45cdf3f4678ca4a4327208
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PuckController
   - hash:
       serializedVersion: 2
-      Hash: a1bd3e717247888e9ffd0f82589276e1
+      Hash: 8fae61c6bb45cdf3f4678ca4a4327208
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player2Controller
@@ -1527,4 +1519,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/manuel/Desktop/proy.apk
+  playerPath: C:/Users/mgara/Proyecto-IAP/test/build.apk

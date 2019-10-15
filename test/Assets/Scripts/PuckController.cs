@@ -4,51 +4,51 @@ using UnityEngine;
 
 public class PuckController : MonoBehaviour
 {
-	public GameController game;
+	public GameController juego;
 
-	private Vector3 movement;
+	private Vector3 movimiento;
 
-	void OnTriggerEnter(Collider collision)
+	void OnTriggerEnter(Collider colision)
 	{
-		GameObject obj = collision.gameObject;
+		GameObject obj = colision.gameObject;
 
-		if ( collision.gameObject.tag == "Player" )
+		if ( colision.gameObject.tag == "Player" )
 		{
-			game.state = GameController.States.playing;
+			juego.estado = GameController.Estados.jugando;
 
-			Vector2 puckPos = new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
-			Vector2 playerPos = new Vector2(obj.GetComponent<Rigidbody>().position.x, obj.GetComponent<Rigidbody>().position.z);
-			Vector2 hitDir = puckPos - playerPos;
+			Vector2 posDisco = new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
+			Vector2 posPlayer = new Vector2(obj.GetComponent<Rigidbody>().position.x, obj.GetComponent<Rigidbody>().position.z);
+			Vector2 dirGolpe = posDisco - posPlayer;
 
-			movement.z = -movement.z;
-			movement += new Vector3(hitDir.x, 0.0f, hitDir.y);
-			movement = new Vector3(
-					Mathf.Clamp(movement.x, -1.25f, 1.25f),
+			movimiento.z = -movimiento.z;
+			movimiento += new Vector3(dirGolpe.x, 0.0f, dirGolpe.y);
+			movimiento = new Vector3(
+					Mathf.Clamp(movimiento.x, -1.25f, 1.25f),
 					0.0f,
-					Mathf.Clamp(movement.z, -1.25f, 1.25f)
+					Mathf.Clamp(movimiento.z, -1.25f, 1.25f)
 			);
 		}
-		else if ( collision.gameObject.tag == "Side" )
-			movement.x = -movement.x;
-		else if ( collision.gameObject.tag == "Front" )
-			movement.z = -movement.z;
-		else if ( collision.gameObject.tag == "Player1Goal" )
+		else if ( colision.gameObject.tag == "Costado" )
+			movimiento.x = -movimiento.x;
+		else if ( colision.gameObject.tag == "Fondo" )
+			movimiento.z = -movimiento.z;
+		else if ( colision.gameObject.tag == "ArcoPlayer1" )
 		{
-			movement = new Vector3(0.0f, 0.0f, 0.0f);
-			game.player2Goals++;
-			game.state = GameController.States.player2Scores;
+			movimiento = new Vector3(0.0f, 0.0f, 0.0f);
+			juego.golesPlayer2++;
+			juego.estado = GameController.Estados.golPlayer2;
 		}
-		else if ( collision.gameObject.tag == "Player2Goal" )
+		else if ( colision.gameObject.tag == "ArcoPlayer2" )
 		{
-			movement = new Vector3(0.0f, 0.0f, 0.0f);
-			game.player1Goals++;
-			game.state = GameController.States.player1Scores;
+			movimiento = new Vector3(0.0f, 0.0f, 0.0f);
+			juego.golesPlayer1++;
+			juego.estado = GameController.Estados.golPlayer1;
 		}
 	}
 
 	void Update()
 	{
-		GetComponent<Rigidbody>().position += movement * game.puckReaction;
+		GetComponent<Rigidbody>().position += movimiento * juego.reaccionDisco;
 		GetComponent<Rigidbody>().position = new Vector3(
 			Mathf.Clamp(GetComponent<Rigidbody>().position.x, -50f, 50f),
 			0.4f,

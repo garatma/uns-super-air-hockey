@@ -4,59 +4,64 @@ using UnityEngine;
 
 public class Player2Controller : MonoBehaviour
 {
-    public GameController game;
+    public GameController juego;
 
-    private Vector3 movement;
+    private Vector3 movimiento;
 
-    private float movLeft_Right = 1;
+    private float movIzquierda_Derecha = 1;
 
     void FixedUpdate()
     {
-        float movH = movLeft_Right; 
+        float movH = movIzquierda_Derecha; 
         
-        switch(game.state)
+        switch(juego.estado)
         {
-            case GameController.States.player2Serves:
+            case GameController.Estados.sacaPlayer2:
                 move(movH);
-				if (Input.GetButton("Fire3"))
-                    game.state = GameController.States.player2Serving;
+				if (Input.GetAxis("Mouse ScrollWheel") != 0.0f )
+                    juego.estado = GameController.Estados.sacandoPlayer2;
                 break;
 
-            case GameController.States.player2Serving:
-                Vector2 puckPos = new Vector2(GetComponent<Rigidbody>().position.x,
+            case GameController.Estados.sacandoPlayer2:
+                Vector2 posDisco = new Vector2(GetComponent<Rigidbody>().position.x,
                                               GetComponent<Rigidbody>().position.z);
 
-                Vector2 player2Pos = new Vector2(game.puck.GetComponent<Rigidbody>().position.x,
-                                                 game.puck.GetComponent<Rigidbody>().position.z);
+                Vector2 posPlayer2 = new Vector2(juego.disco.GetComponent<Rigidbody>().position.x,
+                                                 juego.disco.GetComponent<Rigidbody>().position.z);
 
-                Vector2 hitDir= player2Pos - puckPos;
+                Vector2 dirGolpe= posPlayer2 - posDisco;
 
-                movement = new Vector3(hitDir.x, 0.0f, hitDir.y);
-                GetComponent<Rigidbody>().position += movement * game.player2Reaction;
+                movimiento = new Vector3(dirGolpe.x, 0.0f, dirGolpe.y);
+                GetComponent<Rigidbody>().position += movimiento * juego.reaccionPlayer2;
                 break;
 
-            case GameController.States.playing:
+            case GameController.Estados.jugando:
                 move(movH);
+                break;
+
+			case GameController.Estados.esperandoReinicio:
+				if ( juego.golesPlayer2 == 1 && ( Input.GetAxis("Mouse ScrollWheel") != 0.0f || Input.GetButton("Fire2") || Input.GetButton("Fire1")) )
+                	juego.estado = GameController.Estados.inicio;
                 break;
         }
     }
 
     void move(float movH)
     {
-        movement = new Vector3(movH, 0.0f, 0.0f);
-        GetComponent<Rigidbody>().position += movement * game.player2Reaction;
+        movimiento = new Vector3(movH, 0.0f, 0.0f);
+        GetComponent<Rigidbody>().position += movimiento * juego.reaccionPlayer2;
         GetComponent<Rigidbody>().position = new Vector3(
                 Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.3f,3.3f),
                 0.0f,
                 6f);
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider colision)
     {
-        GameObject obj = collision.gameObject;
+        GameObject obj = colision.gameObject;
 
-        if (collision.gameObject.tag == "Side")
-            movLeft_Right *= -1;
+        if (colision.gameObject.tag == "Costado")
+            movIzquierda_Derecha *= -1;
     }
 
 }
