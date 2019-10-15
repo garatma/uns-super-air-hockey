@@ -8,7 +8,7 @@ public class ControladorDisco : MonoBehaviour
 
 	private Vector3 movimiento;
 
-    private float reaccion = 0.01f;
+    private float reaccion = 0.3f;
 
     void OnTriggerEnter(Collider colision)
 	{
