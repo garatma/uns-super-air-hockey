@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fondo
+  - Costado
+  - ArcoIA
+  - ArcoJugador1
+  - Jugador
+  - ControladorJuego
   layers:
   - Default
   - TransparentFX
