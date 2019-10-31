@@ -37,6 +37,7 @@ ScriptsOnlyBuild:
     - DefaultTrackableEventHandler
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
+    - UnityEngine.Networking.NetworkDiscovery
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -66,66 +67,70 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9768}
+      Script: {instanceID: 9792}
     - Class: 114
-      Script: {instanceID: 9770}
-    - Class: 114
-      Script: {instanceID: 9798}
+      Script: {instanceID: 9794}
     - Class: 114
       Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 9850}
+      Script: {instanceID: 9848}
     - Class: 114
-      Script: {instanceID: 9938}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 9942}
+      Script: {instanceID: 9966}
     - Class: 114
-      Script: {instanceID: 9998}
+      Script: {instanceID: 9970}
     - Class: 114
-      Script: {instanceID: 10016}
+      Script: {instanceID: 10026}
     - Class: 114
-      Script: {instanceID: 10028}
+      Script: {instanceID: 10044}
     - Class: 114
-      Script: {instanceID: 10058}
+      Script: {instanceID: 10056}
     - Class: 114
-      Script: {instanceID: 10308}
+      Script: {instanceID: 10086}
     - Class: 114
-      Script: {instanceID: 10450}
+      Script: {instanceID: 10338}
     - Class: 114
-      Script: {instanceID: 10614}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10650}
     - Class: 114
-      Script: {instanceID: 10772}
+      Script: {instanceID: 10786}
     - Class: 114
-      Script: {instanceID: 10780}
+      Script: {instanceID: 10808}
     - Class: 114
-      Script: {instanceID: 10782}
+      Script: {instanceID: 10816}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 10818}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12228}
+      Script: {instanceID: 12184}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 12562}
+      Script: {instanceID: 12274}
+    - Class: 114
+      Script: {instanceID: 12382}
+    - Class: 114
+      Script: {instanceID: 12608}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1161,7 +1166,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: ca322947b992d23e1c493d8709d4aca6
+      Hash: 13c26d266a08e21b662bc5bb9f16c0c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Disco
