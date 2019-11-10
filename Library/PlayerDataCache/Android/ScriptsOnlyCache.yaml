@@ -109,39 +109,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10614}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10622}
     - Class: 114
-      Script: {instanceID: 10772}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 10780}
+      Script: {instanceID: 10774}
     - Class: 114
       Script: {instanceID: 10782}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 10784}
     - Class: 114
-      Script: {instanceID: 11336}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11750}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 11996}
     - Class: 114
-      Script: {instanceID: 12138}
+      Script: {instanceID: 12026}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12228}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 12230}
     - Class: 114
-      Script: {instanceID: 12562}
+      Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 17202}
+      Script: {instanceID: 12564}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -463,6 +463,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 4fc1ae39ced09cf8d75070e063adeccf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GUI
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -1263,7 +1269,7 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: 987d2427330a70560e10435ecf115089
+      Hash: 594c20347ba56674a18972016d128150
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Jugador
@@ -1771,12 +1777,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4fc1ae39ced09cf8d75070e063adeccf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GUI
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

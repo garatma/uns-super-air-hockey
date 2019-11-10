@@ -41,6 +41,7 @@ public class ControladorJuego : MonoBehaviour
 		// disco.desactivar();
 		// Instantiate(disco);
         // Cursor.visible = false;
+        jugadoresConectados = 0;
         estado = Estados.inicio;
     }
 
@@ -49,18 +50,17 @@ public class ControladorJuego : MonoBehaviour
         switch (estado)
         {
             case Estados.inicio:
-                Debug.Log(jugadoresConectados);
-				// if ( jugadoresConectados == 2 )
-				// {
-				// 	disco.activar();
-                //  managerGUI.setMensajeControl("");
-				// 	resetearPosiciones(-3.2f);
-				// 	golesJugador1 = 0;
-				// 	golesJugador2 = 0;
-				// 	estado = Estados.sacaJugador1;
-				// 	resetearPosiciones(-3.2f);
-                //  Cursor.visible = false;
-				// }
+                // Debug.Log(jugadoresConectados);
+				if ( jugadoresConectados == 2 )
+				{
+					disco.activar();
+                    managerGUI.setMensajeControl("");
+					resetearDisco(-3.2f);
+					golesJugador1 = 0;
+					golesJugador2 = 0;
+                    managerGUI.setGoles(golesJugador1, golesJugador2);
+					estado = Estados.sacaJugador1;
+				}
                 break;
 
             // case Estados.sacaJugador2:
@@ -95,19 +95,19 @@ public class ControladorJuego : MonoBehaviour
                 {
                     // juego terminado
                     estado = Estados.fin;
-                    resetearPosiciones(0.0f);
+                    resetearDisco(0.0f);
                 }
                 else if (estado == Estados.golJugador1)
                 {
                     // gol del Jugador1
                     estado = Estados.sacaJugador2;
-                    resetearPosiciones(3.2f);
+                    resetearDisco(3.2f);
                 }
                 else
                 {
                     // gol del Jugador2
                     estado = Estados.sacaJugador1;
-                    resetearPosiciones(-3.2f);
+                    resetearDisco(-3.2f);
                 }
                 break;
 
@@ -139,7 +139,7 @@ public class ControladorJuego : MonoBehaviour
                 {
 					disco.activar();
                     managerGUI.setMensajeControl("");
-                    resetearPosiciones(-3.2f);
+                    resetearDisco(-3.2f);
                     estado = Estados.sacaJugador1;
                 }
                 break;
@@ -168,23 +168,25 @@ public class ControladorJuego : MonoBehaviour
 
 	public void jugadorConectado(Jugador jugador)
 	{
-		Debug.Log(disco);
+        if ( jugadoresConectados > 1 ) jugadoresConectados = 0;
 		jugadoresConectados++;
 		switch (jugadoresConectados)
 		{
 			case 1:
 				jugador1 = jugador;
-				// jugador1.setPosicion(0.0f, 0.0f, -6.4f);
 				break;
 			case 2:
-				resetearPosiciones(-3.2f);
 				jugador2 = jugador;
-				// jugador2.setPosicion(0.0f, 0.0f, 6.4f);
 				break;
 		}
 	}
 
-    void resetearPosiciones(float posicionDisco)
+    public int soyJugador()
+    {
+        return jugadoresConectados;
+    }
+
+    void resetearDisco(float posicionDisco)
     {
         // jugador1.setPosicion(0.0f, 0.0f, -6.4f);
         // jugador2.setPosicion(0.0f, 0.0f, 6.4f);

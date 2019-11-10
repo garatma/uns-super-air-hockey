@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  runInBackground: 1
+  runInBackground: 0
   startOnHeadless: 1
   serverTickRate: 120
   showDebugMessages: 0

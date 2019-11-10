@@ -157,5 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   juego: {fileID: 5610880779701255477, guid: ab7b35ec4fb0c9848bd9da86c08880af, type: 3}
-  initialPosition: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9,
+  zonaJugador1: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9,
     type: 3}
+  zonaJugador2: {fileID: 1155232403491100319, guid: 7dc5c0e84e2bd6947a08e6d9ba993e24,
+    type: 3}
+  materialJugador2: {fileID: 2100000, guid: fa8718be79657d0489204fc8fb40a671, type: 2}
+  sentidoMovimiento: 1

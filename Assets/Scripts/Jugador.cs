@@ -8,7 +8,9 @@ public class Jugador : MonoBehaviour
     private Vector3 movimiento;
     private float reaccion = 0.2f;
 
-	public GameObject initialPosition;
+	public GameObject zonaJugador1;
+	public GameObject zonaJugador2;
+	private GameObject zona;
 	private float targetWidth, targetHeight;
 	private float width, height;
 
@@ -21,9 +23,22 @@ public class Jugador : MonoBehaviour
 		width = Screen.width;
 		height = Screen.height;
 
-		targetWidth = initialPosition.transform.localScale.x * 1.0f;
-		targetHeight = initialPosition.transform.localScale.z * 1.0f;
 		juego.jugadorConectado(this);
+
+		int jugador = juego.soyJugador();
+
+		if ( jugador == 2 )
+		{
+			GetComponent<Renderer>().material = materialJugador2;
+			zona = zonaJugador2;
+		}
+		else
+		{
+			zona = zonaJugador1;
+		}
+
+		targetWidth = zona.transform.localScale.x * 1.0f;
+		targetHeight = zona.transform.localScale.z * 1.0f;
 	}
 
 	void Update()
@@ -35,8 +50,8 @@ public class Jugador : MonoBehaviour
 		targetPos.x = (targetWidth/width) * Input.mousePosition.x;
 		targetPos.z = (targetHeight/height) * Input.mousePosition.y;
 
-		targetPos.x += initialPosition.transform.position.x - (targetWidth/2.0f);
-		targetPos.z += initialPosition.transform.position.z - (targetHeight/2.0f);
+		targetPos.x += zona.transform.position.x - (targetWidth/2.0f);
+		targetPos.z += zona.transform.position.z - (targetHeight/2.0f);
 
 		targetPos.y = 0.32f;
 		transform.position = targetPos;
