@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - ConexionJugador
     - ControladorJuego
     - Disco
+    - GUI
     - Jugador
     Mirror.Components.dll:
     - Mirror.NetworkTransform
@@ -24,8 +25,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
     Vuforia.UnityExtensions.dll:
     - Vuforia.ImageTargetBehaviour
@@ -73,64 +76,72 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9792}
+      Script: {instanceID: 9768}
     - Class: 114
-      Script: {instanceID: 9794}
+      Script: {instanceID: 9770}
+    - Class: 114
+      Script: {instanceID: 9798}
     - Class: 114
       Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 9848}
+      Script: {instanceID: 9850}
     - Class: 114
-      Script: {instanceID: 9878}
+      Script: {instanceID: 9938}
     - Class: 114
-      Script: {instanceID: 9966}
+      Script: {instanceID: 9942}
     - Class: 114
-      Script: {instanceID: 9970}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 10026}
+      Script: {instanceID: 10016}
     - Class: 114
-      Script: {instanceID: 10044}
+      Script: {instanceID: 10028}
     - Class: 114
-      Script: {instanceID: 10056}
+      Script: {instanceID: 10058}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10338}
+      Script: {instanceID: 10308}
     - Class: 114
-      Script: {instanceID: 10484}
+      Script: {instanceID: 10450}
     - Class: 114
-      Script: {instanceID: 10650}
+      Script: {instanceID: 10614}
     - Class: 114
-      Script: {instanceID: 10786}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10808}
+      Script: {instanceID: 10772}
     - Class: 114
-      Script: {instanceID: 10816}
+      Script: {instanceID: 10780}
     - Class: 114
-      Script: {instanceID: 10818}
+      Script: {instanceID: 10782}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 11626}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 12004}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 12070}
+      Script: {instanceID: 11994}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 12024}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 12168}
     - Class: 114
-      Script: {instanceID: 12382}
+      Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12608}
+      Script: {instanceID: 12336}
+    - Class: 114
+      Script: {instanceID: 12562}
+    - Class: 114
+      Script: {instanceID: 17202}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -140,6 +151,8 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -170,7 +183,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 76b1a8bc49f2082bfc3f4f010d797140
+      Hash: c9207ee0d5278c538eb8bfbdace4d486
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorJuego
@@ -1250,7 +1263,7 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: ca322947b992d23e1c493d8709d4aca6
+      Hash: 987d2427330a70560e10435ecf115089
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Jugador
@@ -1758,7 +1771,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 4fc1ae39ced09cf8d75070e063adeccf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GUI
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/manuel/proyecto-iap/Builds/build.apk
+  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk

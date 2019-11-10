@@ -9,17 +9,14 @@ public class ControladorJuego : MonoBehaviour
     public Jugador jugador2;
     public Disco disco;
 
-    public UnityEngine.UI.Text[] golesGUI_Jugador1 = { null, null };
-    public int golesJugador1;
+    public GUI managerGUI;
 
-    public UnityEngine.UI.Text[] golesGUI_Jugador2 = { null, null };
+    public int golesJugador1;
     public int golesJugador2;
 
     public float tiempo;
 
-    public UnityEngine.UI.Text mensaje_control;
-
-    private Vector2 dirGolpe;
+    public GameObject ojoDerecho;
 
     public enum Estados
     {
@@ -34,17 +31,17 @@ public class ControladorJuego : MonoBehaviour
         esperandoReinicio,
         pinchado
     }
-    
+
     public Estados estado;
 
 	private int jugadoresConectados = 0;
 
     void Start()
     {
-		disco.desactivar();
-		Instantiate(disco);
+		// disco.desactivar();
+		// Instantiate(disco);
+        // Cursor.visible = false;
         estado = Estados.inicio;
-        //Cursor.visible = false;
     }
 
     void Update()
@@ -52,16 +49,18 @@ public class ControladorJuego : MonoBehaviour
         switch (estado)
         {
             case Estados.inicio:
-				if ( jugadoresConectados == 2 )
-				{
-					disco.activar();
-					mensaje_control.text = "";
-					resetearPosiciones(-3.2f);
-					golesJugador1 = 0;
-					golesJugador2 = 0;
-					estado = Estados.sacaJugador1;
-					resetearPosiciones(-3.2f);
-				}
+                Debug.Log(jugadoresConectados);
+				// if ( jugadoresConectados == 2 )
+				// {
+				// 	disco.activar();
+                //  managerGUI.setMensajeControl("");
+				// 	resetearPosiciones(-3.2f);
+				// 	golesJugador1 = 0;
+				// 	golesJugador2 = 0;
+				// 	estado = Estados.sacaJugador1;
+				// 	resetearPosiciones(-3.2f);
+                //  Cursor.visible = false;
+				// }
                 break;
 
             // case Estados.sacaJugador2:
@@ -90,10 +89,7 @@ public class ControladorJuego : MonoBehaviour
 
             case Estados.golJugador2:
             case Estados.golJugador1:
-                golesGUI_Jugador1[0].text = golesJugador1.ToString();
-                golesGUI_Jugador2[0].text = golesJugador1.ToString();
-                golesGUI_Jugador1[1].text = golesJugador2.ToString();
-                golesGUI_Jugador2[1].text = golesJugador2.ToString();
+                managerGUI.setGoles(golesJugador1, golesJugador2);
 
                 if (golesJugador1 == 10 || golesJugador2 == 10)
                 {
@@ -117,9 +113,9 @@ public class ControladorJuego : MonoBehaviour
 
             case Estados.fin:
                 if (golesJugador1 == 10)
-                    mensaje_control.text = "Ganó el jugador 1! Apriete algún botón para reiniciar.";
+                    managerGUI.setMensajeControl("Ganó el jugador 1! Apriete algún botón para reiniciar.");
                 else
-                    mensaje_control.text = "Ganó el robot! Apriete algún botón para reiniciar.";
+                    managerGUI.setMensajeControl("Ganó el robot! Apriete algún botón para reiniciar.");
                 estado = Estados.esperandoReinicio;
                 break;
 
@@ -133,7 +129,7 @@ public class ControladorJuego : MonoBehaviour
                 break;
 
             case Estados.pinchado:
-                mensaje_control.text = "Se pinchó!!!";
+                managerGUI.setMensajeControl("Se pinchó!!!");
 				disco.desactivar();
 
                 // esperar input
@@ -142,11 +138,31 @@ public class ControladorJuego : MonoBehaviour
                      Input.GetButton("Fire1"))
                 {
 					disco.activar();
-                    mensaje_control.text = " ";
+                    managerGUI.setMensajeControl("");
                     resetearPosiciones(-3.2f);
                     estado = Estados.sacaJugador1;
                 }
                 break;
+        }
+    }
+
+    public void cambiarModo(bool VR)
+    {
+        Vector3 posicion = ojoDerecho.transform.position;
+        Vector3 escala = ojoDerecho.transform.localScale;
+        if (VR)
+        {
+            escala.x = 10.0f;
+            posicion.x = 50.0f;
+            ojoDerecho.transform.localScale = escala;
+            ojoDerecho.transform.position = posicion;
+        }
+        else
+        {
+            escala.x = 20.0f;
+            posicion.x = 0.0f;
+            ojoDerecho.transform.localScale = escala;
+            ojoDerecho.transform.position = posicion;
         }
     }
 
@@ -158,17 +174,12 @@ public class ControladorJuego : MonoBehaviour
 		{
 			case 1:
 				jugador1 = jugador;
-				jugador1.setPosicion(0.0f, 0.0f, -6.4f);
-				jugador1.setLugar(-1.0f);
+				// jugador1.setPosicion(0.0f, 0.0f, -6.4f);
 				break;
 			case 2:
 				resetearPosiciones(-3.2f);
 				jugador2 = jugador;
-				jugador2.setPosicion(0.0f, 0.0f, 6.4f);
-				jugador2.setLugar(1.0f);
-				break;
-			case 3:
-				jugadoresConectados = 2;
+				// jugador2.setPosicion(0.0f, 0.0f, 6.4f);
 				break;
 		}
 	}
@@ -208,4 +219,3 @@ public class ControladorJuego : MonoBehaviour
         return estado == Estados.sacaJugador2;
     }
 }
-

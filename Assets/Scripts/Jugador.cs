@@ -5,52 +5,66 @@ using UnityEngine;
 public class Jugador : MonoBehaviour
 {
 	public ControladorJuego juego;
-
     private Vector3 movimiento;
-
     private float reaccion = 0.2f;
 
-	private float lugar = 1.0f;
+	public GameObject initialPosition;
+	private float targetWidth, targetHeight;
+	private float width, height;
+
+	public Material materialJugador2;
+
+	public int sentidoMovimiento = 1;
 
 	void Start()
 	{
+		width = Screen.width;
+		height = Screen.height;
+
+		targetWidth = initialPosition.transform.localScale.x * 1.0f;
+		targetHeight = initialPosition.transform.localScale.z * 1.0f;
 		juego.jugadorConectado(this);
 	}
 
 	void Update()
 	{
-        Vector2 mouse = new Vector2(Input.GetAxis("Mouse X")/2.0f, Input.GetAxis("Mouse Y")/2.0f);
-		move(mouse.x, mouse.y);
+        // Vector2 mouse = new Vector2(Input.GetAxis("Mouse X")/2.0f, Input.GetAxis("Mouse Y")/2.0f);
+		// move(mouse.x, mouse.y);
+
+		Vector3 targetPos = Vector3.one;
+		targetPos.x = (targetWidth/width) * Input.mousePosition.x;
+		targetPos.z = (targetHeight/height) * Input.mousePosition.y;
+
+		targetPos.x += initialPosition.transform.position.x - (targetWidth/2.0f);
+		targetPos.z += initialPosition.transform.position.z - (targetHeight/2.0f);
+
+		targetPos.y = 0.32f;
+		transform.position = targetPos;
 	}
 
-	public void setLugar(float lug)
-	{
-		lugar = lug;
-	}
-
-	public void move(float movx, float movz)
-	{
-		movimiento = new Vector3(movx, 0.0f, movz);
-		GetComponent<Rigidbody>().position += movimiento * reaccion;
-		GetComponent<Rigidbody>().position = new Vector3(
-				Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.5f,3.5f),
-				0.0f,
-                Mathf.Clamp(GetComponent<Rigidbody>().position.z, -6.4f, 6.4f));
-	}
-
-    public void sacar(Vector2 dir)
-    {
-        movimiento = new Vector3(dir.x, 0.0f, dir.y);
-        GetComponent<Rigidbody>().position += movimiento * reaccion;
-    }
-
-    public Vector2 getPosicion()
-    {
-        return new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
-    }
-
-    public void setPosicion(float x, float y, float z)
-    {
-        GetComponent<Rigidbody>().position = new Vector3(x, y, z);
-    }
+	// public void move(float movx, float movz)
+	// {
+	// 	movimiento = new Vector3(movx, 0.0f, movz);
+	// 	GetComponent<Rigidbody>().position += movimiento * reaccion;
+	// 	GetComponent<Rigidbody>().position = new Vector3(
+	// 			Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.5f,3.5f),
+	// 			0.0f,
+    //             Mathf.Clamp(GetComponent<Rigidbody>().position.z, -6.4f, 6.4f));
+	// }
+	//
+    // public void sacar(Vector2 dir)
+    // {
+    //     movimiento = new Vector3(dir.x, 0.0f, dir.y);
+    //     GetComponent<Rigidbody>().position += movimiento * reaccion;
+    // }
+	//
+    // public Vector2 getPosicion()
+    // {
+    //     return new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
+    // }
+	//
+    // public void setPosicion(float x, float y, float z)
+    // {
+    //     GetComponent<Rigidbody>().position = new Vector3(x, y, z);
+    // }
 }

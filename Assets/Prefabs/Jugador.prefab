@@ -157,3 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   juego: {fileID: 5610880779701255477, guid: ab7b35ec4fb0c9848bd9da86c08880af, type: 3}
+  initialPosition: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9,
+    type: 3}
