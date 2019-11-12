@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Jugador : MonoBehaviour
+public class Jugador : NetworkBehaviour
 {
 	public ControladorJuego juego;
     private Vector3 movimiento;
@@ -43,18 +44,18 @@ public class Jugador : MonoBehaviour
 
 	void Update()
 	{
-        // Vector2 mouse = new Vector2(Input.GetAxis("Mouse X")/2.0f, Input.GetAxis("Mouse Y")/2.0f);
-		// move(mouse.x, mouse.y);
+		if (hasAuthority)
+		{
+			Vector3 targetPos = Vector3.one;
+			targetPos.x = (targetWidth/width) * Input.mousePosition.x;
+			targetPos.z = (targetHeight/height) * Input.mousePosition.y;
 
-		Vector3 targetPos = Vector3.one;
-		targetPos.x = (targetWidth/width) * Input.mousePosition.x;
-		targetPos.z = (targetHeight/height) * Input.mousePosition.y;
+			targetPos.x += zona.transform.position.x - (targetWidth/2.0f);
+			targetPos.z += zona.transform.position.z - (targetHeight/2.0f);
 
-		targetPos.x += zona.transform.position.x - (targetWidth/2.0f);
-		targetPos.z += zona.transform.position.z - (targetHeight/2.0f);
-
-		targetPos.y = 0.32f;
-		transform.position = targetPos;
+			targetPos.y = 0.32f;
+			transform.position = targetPos;
+		}
 	}
 
 	// public void move(float movx, float movz)
