@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 6bbd175ff5fbb3f4795031c5bc35dfc3
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 824026369
 --- !u!114 &6153128129285485401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e88e6e3fbd8504a8aaf2839418a5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  juego: {fileID: 5610880779701255477, guid: ab7b35ec4fb0c9848bd9da86c08880af, type: 3}
+  syncMode: 0
+  syncInterval: 0.1
+  juego: {fileID: 4922145988913852097, guid: c3ceb014337cf6a42952803cac684008, type: 3}
   zonaJugador1: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9,
     type: 3}
   zonaJugador2: {fileID: 1155232403491100319, guid: 7dc5c0e84e2bd6947a08e6d9ba993e24,

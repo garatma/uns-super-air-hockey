@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
@@ -6,14 +6,14 @@ using Mirror;
 public class Jugador : NetworkBehaviour
 {
 	public ControladorJuego juego;
-    private Vector3 movimiento;
-    private float reaccion = 0.2f;
+    private Vector3 direccion;
+    private float velocidad = 0.2f;
 
 	public GameObject zonaJugador1;
 	public GameObject zonaJugador2;
 	private GameObject zona;
-	private float targetWidth, targetHeight;
-	private float width, height;
+	private float anchoZona, altoZona;
+	private float anchoVentana, altoVentana;
 
 	public Material materialJugador2;
 
@@ -21,8 +21,8 @@ public class Jugador : NetworkBehaviour
 
 	void Start()
 	{
-		width = Screen.width;
-		height = Screen.height;
+		anchoVentana = Screen.width;
+		altoVentana = Screen.height;
 
 		juego.jugadorConectado(this);
 
@@ -38,30 +38,30 @@ public class Jugador : NetworkBehaviour
 			zona = zonaJugador1;
 		}
 
-		targetWidth = zona.transform.localScale.x * 1.0f;
-		targetHeight = zona.transform.localScale.z * 1.0f;
+		anchoZona = zona.transform.localScale.x * 1.0f;
+		altoZona = zona.transform.localScale.z * 1.0f;
 	}
 
 	void Update()
 	{
 		if (hasAuthority)
 		{
-			Vector3 targetPos = Vector3.one;
-			targetPos.x = (targetWidth/width) * Input.mousePosition.x;
-			targetPos.z = (targetHeight/height) * Input.mousePosition.y;
+			Vector3 posicionActual = Vector3.one;
+			posicionActual.x = (anchoZona/anchoVentana) * Input.mousePosition.x;
+			posicionActual.z = (altoZona/altoVentana) * Input.mousePosition.y;
 
-			targetPos.x += zona.transform.position.x - (targetWidth/2.0f);
-			targetPos.z += zona.transform.position.z - (targetHeight/2.0f);
+			posicionActual.x += zona.transform.position.x - (anchoZona/2.0f);
+			posicionActual.z += zona.transform.position.z - (altoZona/2.0f);
 
-			targetPos.y = 0.32f;
-			transform.position = targetPos;
+			posicionActual.y = 0.32f;
+			transform.position = posicionActual;
 		}
 	}
 
 	// public void move(float movx, float movz)
 	// {
-	// 	movimiento = new Vector3(movx, 0.0f, movz);
-	// 	GetComponent<Rigidbody>().position += movimiento * reaccion;
+	// 	direccion = new Vector3(movx, 0.0f, movz);
+	// 	GetComponent<Rigidbody>().position += direccion * velocidad;
 	// 	GetComponent<Rigidbody>().position = new Vector3(
 	// 			Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.5f,3.5f),
 	// 			0.0f,
@@ -70,8 +70,8 @@ public class Jugador : NetworkBehaviour
 	//
     // public void sacar(Vector2 dir)
     // {
-    //     movimiento = new Vector3(dir.x, 0.0f, dir.y);
-    //     GetComponent<Rigidbody>().position += movimiento * reaccion;
+    //     direccion = new Vector3(dir.x, 0.0f, dir.y);
+    //     GetComponent<Rigidbody>().position += direccion * velocidad;
     // }
 	//
     // public Vector2 getPosicion()

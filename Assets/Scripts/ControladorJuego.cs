@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,23 +18,9 @@ public class ControladorJuego : MonoBehaviour
 
     public GameObject ojoDerecho;
 
-    public enum Estados
-    {
-        inicio,
-        sacaJugador1,
-        sacaJugador2,
-		sacandoJugador2,
-        golJugador1,
-        golJugador2,
-        jugando,
-        fin,
-        esperandoReinicio,
-        pinchado
-    }
+    public EstadoAbstracto estado;
 
-    public Estados estado;
-
-	private int jugadoresConectados = 0;
+    public int jugadoresConectados = 0;
 
     void Start()
     {
@@ -42,108 +28,13 @@ public class ControladorJuego : MonoBehaviour
 		// Instantiate(disco);
         // Cursor.visible = false;
         jugadoresConectados = 0;
-        estado = Estados.inicio;
+        // estado = Estados.inicio;
+        estado = new EstadoInicio(this);
     }
 
     void Update()
     {
-        switch (estado)
-        {
-            case Estados.inicio:
-                // Debug.Log(jugadoresConectados);
-				if ( jugadoresConectados == 2 )
-				{
-					disco.activar();
-                    managerGUI.setMensajeControl("");
-					resetearDisco(-3.2f);
-					golesJugador1 = 0;
-					golesJugador2 = 0;
-                    managerGUI.setGoles(golesJugador1, golesJugador2);
-					estado = Estados.sacaJugador1;
-				}
-                break;
-
-            // case Estados.sacaJugador2:
-            //     if (Input.GetAxis("Mouse ScrollWheel") != 0.0f)
-            //     {
-            //         Vector2 posJugador2 = jugador2.getPosicion();
-            //         Vector2 posDisco = disco.getPosicion();
-            //         dirGolpe = posDisco - posJugador2;
-            //         estado = Estados.sacandoJugador2;
-            //     }
-            //     break;
-
-			// case Estados.sacandoJugador2:
-			// 	jugador2.sacar(dirGolpe);
-			// 	break;
-
-            case Estados.jugando:
-                float tiempo_actual = Time.time;
-
-                if (tiempo_actual - tiempo > 7.0f)
-                {
-                    disco.setMovimiento(0.0f, 0.0f, 0.0f);
-                    estado = Estados.pinchado;
-                }
-                break;
-
-            case Estados.golJugador2:
-            case Estados.golJugador1:
-                managerGUI.setGoles(golesJugador1, golesJugador2);
-
-                if (golesJugador1 == 10 || golesJugador2 == 10)
-                {
-                    // juego terminado
-                    estado = Estados.fin;
-                    resetearDisco(0.0f);
-                }
-                else if (estado == Estados.golJugador1)
-                {
-                    // gol del Jugador1
-                    estado = Estados.sacaJugador2;
-                    resetearDisco(3.2f);
-                }
-                else
-                {
-                    // gol del Jugador2
-                    estado = Estados.sacaJugador1;
-                    resetearDisco(-3.2f);
-                }
-                break;
-
-            case Estados.fin:
-                if (golesJugador1 == 10)
-                    managerGUI.setMensajeControl("Ganó el jugador 1! Apriete algún botón para reiniciar.");
-                else
-                    managerGUI.setMensajeControl("Ganó el robot! Apriete algún botón para reiniciar.");
-                estado = Estados.esperandoReinicio;
-                break;
-
-            case Estados.esperandoReinicio:
-                // esperar input
-				disco.desactivar();
-                if (Input.GetAxis("Mouse ScrollWheel") != 0.0f ||
-                     Input.GetButton("Fire2") ||
-                     Input.GetButton("Fire1"))
-                    estado = Estados.inicio;
-                break;
-
-            case Estados.pinchado:
-                managerGUI.setMensajeControl("Se pinchó!!!");
-				disco.desactivar();
-
-                // esperar input
-                if (Input.GetAxis("Mouse ScrollWheel") != 0.0f ||
-                     Input.GetButton("Fire2") ||
-                     Input.GetButton("Fire1"))
-                {
-					disco.activar();
-                    managerGUI.setMensajeControl("");
-                    resetearDisco(-3.2f);
-                    estado = Estados.sacaJugador1;
-                }
-                break;
-        }
+        estado.Ejecutar();
     }
 
     public void cambiarModo(bool VR)
@@ -186,7 +77,7 @@ public class ControladorJuego : MonoBehaviour
         return jugadoresConectados;
     }
 
-    void resetearDisco(float posicionDisco)
+    public void resetearDisco(float posicionDisco)
     {
         // jugador1.setPosicion(0.0f, 0.0f, -6.4f);
         // jugador2.setPosicion(0.0f, 0.0f, 6.4f);
@@ -196,7 +87,8 @@ public class ControladorJuego : MonoBehaviour
     public void colisionDiscoJugador()
     {
         tiempo = Time.time;
-        estado = Estados.jugando;
+        // estado = Estados.jugando;
+        cambiarEstado(new EstadoJugando(this));
     }
 
     public void colisionDiscoFondo()
@@ -207,17 +99,26 @@ public class ControladorJuego : MonoBehaviour
     public void golJugador2()
     {
         golesJugador2++;
-        estado = Estados.golJugador2;
+        // estado = Estados.golJugador2;
+        cambiarEstado(new EstadoGolJugador2(this));
     }
 
     public void golJugador1()
     {
         golesJugador1++;
-        estado = Estados.golJugador1;
+        // estado = Estados.golJugador1;
+        cambiarEstado(new EstadoGolJugador1(this));
     }
 
     public bool sacaJugador2()
     {
-        return estado == Estados.sacaJugador2;
+        // return estado == Estados.sacaJugador2;
+        //return (typeof(EstadoSacaJugador2) == estado.GetType());
+        return (typeof(EstadoSacaJugador2).Equals(estado.GetType()));
+    }
+
+    public void cambiarEstado(EstadoAbstracto estadoNuevo)
+    {
+        estado = estadoNuevo;
     }
 }

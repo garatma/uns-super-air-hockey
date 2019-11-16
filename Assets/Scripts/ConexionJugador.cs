@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
@@ -6,24 +6,24 @@ using Mirror;
 public class ConexionJugador : NetworkBehaviour
 {
 	public GameObject jugador;
-	
-    // Start is called before the first frame update
+
+    // Start se invoca antes del primer frame de update
     void Start()
     {
 		if ( isLocalPlayer )
 			CmdSpawnJugador();
     }
 
-    // Update is called once per frame
+    // Update es invocado en cada frame
     void Update()
     {
-        
+
     }
 
 	[Command]
 	void CmdSpawnJugador()
 	{
-		GameObject go = Instantiate(jugador); 
-		NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
+		GameObject iniciar = Instantiate(jugador);
+		NetworkServer.SpawnWithClientAuthority(iniciar, connectionToClient);
 	}
 }

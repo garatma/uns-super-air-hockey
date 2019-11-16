@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +6,8 @@ public class Disco : MonoBehaviour
 {
 	public ControladorJuego juego;
 	public MeshCollider meshCollider;
-	private Vector3 movimiento;
-    private float reaccion = 0.3f;
+	private Vector3 direccion;
+    private float velocidad = 0.3f;
 
 	void Start()
 	{
@@ -23,39 +23,39 @@ public class Disco : MonoBehaviour
             juego.colisionDiscoJugador();
 
             Vector2 posDisco = new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
-            Vector2 posPlayer = new Vector2(obj.GetComponent<Rigidbody>().position.x, obj.GetComponent<Rigidbody>().position.z);
-            Vector2 dirGolpe = posDisco - posPlayer;
+            Vector2 posJugador = new Vector2(obj.GetComponent<Rigidbody>().position.x, obj.GetComponent<Rigidbody>().position.z);
+            Vector2 dirGolpe = posDisco - posJugador;
 
-            movimiento.z = -movimiento.z;
-            movimiento += new Vector3(dirGolpe.x, 0.0f, dirGolpe.y);
-            movimiento = new Vector3(
-                    Mathf.Clamp(movimiento.x, -1.25f, 1.25f),
+            direccion.z = -direccion.z;
+            direccion += new Vector3(dirGolpe.x, 0.0f, dirGolpe.y);
+            direccion = new Vector3(
+                    Mathf.Clamp(direccion.x, -1.25f, 1.25f),
                     0.0f,
-                    Mathf.Clamp(movimiento.z, -1.25f, 1.25f)
+                    Mathf.Clamp(direccion.z, -1.25f, 1.25f)
             );
         }
         else if (colision.gameObject.tag == "Costado")
-            movimiento.x = -movimiento.x;
+            direccion.x = -direccion.x;
         else if (colision.gameObject.tag == "Fondo")
         {
             juego.colisionDiscoFondo();
-            movimiento.z = -movimiento.z;
+            direccion.z = -direccion.z;
         }
         else if (colision.gameObject.tag == "ArcoJugador1")
         {
-            movimiento = new Vector3(0.0f, 0.0f, 0.0f);
+            direccion = new Vector3(0.0f, 0.0f, 0.0f);
             juego.golJugador2();
         }
         else if (colision.gameObject.tag == "ArcoJugador2")
         {
-            movimiento = new Vector3(0.0f, 0.0f, 0.0f);
+            direccion = new Vector3(0.0f, 0.0f, 0.0f);
             juego.golJugador1();
         }
 	}
 
 	void Update()
 	{
-		GetComponent<Rigidbody>().position += movimiento * reaccion * Time.deltaTime *40;
+		GetComponent<Rigidbody>().position += direccion * velocidad * Time.deltaTime * 40;
 		GetComponent<Rigidbody>().position = new Vector3(
 			Mathf.Clamp(GetComponent<Rigidbody>().position.x, -50f, 50f),
 			0.4f,
@@ -73,9 +73,9 @@ public class Disco : MonoBehaviour
 		meshCollider.enabled = false;
 	}
 
-    public void setMovimiento(float x, float y, float z)
+    public void setDireccion(float x, float y, float z)
     {
-        movimiento = new Vector3(x, y, z);
+        direccion = new Vector3(x, y, z);
     }
 
     public Vector2 getPosicion()
