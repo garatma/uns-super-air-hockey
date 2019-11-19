@@ -197,7 +197,7 @@ RectTransform:
   m_GameObject: {fileID: 197999475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98271, y: 0.98271, z: 0.98271}
   m_Children: []
   m_Father: {fileID: 718959450}
   m_RootOrder: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jugador vs. IA
+  m_text: Player vs. IA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294461183
+  m_fontColor: {r: 1, g: 0.2783019, b: 0.97509515, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_margin: {x: 32.67987, y: 24.553648, z: 28.369383, w: 21.045992}
   m_textInfo:
     textComponent: {fileID: 197999477}
-    characterCount: 14
+    characterCount: 13
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -510,7 +510,7 @@ RectTransform:
   m_GameObject: {fileID: 718959449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6815, y: 0.49408752, z: 0.6815}
   m_Children:
   - {fileID: 197999476}
   m_Father: {fileID: 13612022}
@@ -518,7 +518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.5, y: 94}
+  m_AnchoredPosition: {x: 4.5, y: -62.8}
   m_SizeDelta: {x: 296.3, y: 91.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718959451
@@ -822,7 +822,7 @@ RectTransform:
   m_GameObject: {fileID: 1738004844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1443521, y: 1.00004, z: 1}
+  m_LocalScale: {x: 0.8129821, y: 0.4329356, z: 0.71043}
   m_Children:
   - {fileID: 2046405283}
   m_Father: {fileID: 13612022}
@@ -830,7 +830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.5, y: -40.7}
+  m_AnchoredPosition: {x: 5.6122, y: -126.28}
   m_SizeDelta: {x: 296.3, y: 91.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738004846
@@ -973,13 +973,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: edf93cff88336164c9ef0aa86ee8b16e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1023,14 +1023,14 @@ RectTransform:
   m_GameObject: {fileID: 2046405282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9940123, y: 1.149954, z: 0.7330841}
+  m_LocalScale: {x: 0.83248526, y: 1.6559339, z: 0.7330841}
   m_Children: []
   m_Father: {fileID: 1738004845}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.600006, y: 2.5999985}
+  m_AnchoredPosition: {x: 20.2, y: -5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046405284
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jugador vs. Jugador
+  m_text: Player vs. Player
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1060,8 +1060,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294191100
+  m_fontColor: {r: 0.990566, g: 0.1541919, b: 0.95863575, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1117,10 +1117,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.1437752, y: 25.314411, z: 19.139477, w: 6.590584}
+  m_margin: {x: 1.1437752, y: 25.314411, z: 19.139477, w: 26.444973}
   m_textInfo:
     textComponent: {fileID: 2046405284}
-    characterCount: 19
+    characterCount: 17
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
