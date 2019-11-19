@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\ConexionJugador.cs" />
      <Compile Include="Assets\Scripts\ControladorJuego.cs" />
      <Compile Include="Assets\Scripts\Disco.cs" />
@@ -74,6 +73,7 @@
      <Compile Include="Assets\Scripts\GUI.cs" />
      <Compile Include="Assets\Scripts\IA.cs" />
      <Compile Include="Assets\Scripts\Jugador.cs" />
+     <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
