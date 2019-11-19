@@ -17,6 +17,8 @@ public class GUI : MonoBehaviour
     void Start()
     {
         botonModo.onClick.AddListener(oyente);
+        // TODO: poner esta opción en verdadero una vez que el networking
+        // funcione correctamente.
         //botonModo.interactable = false;
     }
 

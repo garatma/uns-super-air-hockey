@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class EstadoGolJugador2 : EstadoGolAbstracto
 {
@@ -14,11 +14,10 @@ public class EstadoGolJugador2 : EstadoGolAbstracto
     {
         // Realiza la acción correspondiente
         base.EjecutarGol(juego);
-        
-        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))
+
+        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))      // estado != Estado.fin
         {
-            // gol del Jugador2
-            // estado = Estados.sacaJugador1;
+            // Gol del Jugador2
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
             juego.resetearDisco(-3.2f);
         }

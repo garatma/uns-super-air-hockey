@@ -21,7 +21,7 @@ public class ControladorJuego : MonoBehaviour
 
     public EstadoAbstracto estado;
 
-    int cantidadJugadores = 0;
+    private int cantidadJugadores = 2;
 
     void Start()
     {
@@ -35,7 +35,6 @@ public class ControladorJuego : MonoBehaviour
 
     public void cambiarModo(bool VR)
     {
-        Debug.Log(jugadorControlado);
         Vector3 posicion = camara.transform.position;
         Quaternion rotacion = camara.transform.localRotation;
         if (VR)
@@ -64,6 +63,7 @@ public class ControladorJuego : MonoBehaviour
                 rotacion.eulerAngles = new Vector3(25.0f, 180.0f, 0.0f);
             }
 
+            // (x,y,w,h)
             camara.rect = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
             camara.transform.position = posicion;
             camara.transform.localRotation = rotacion;
@@ -77,12 +77,14 @@ public class ControladorJuego : MonoBehaviour
 		{
 			case 1:
 				jugador1 = jugador;
+                // TODO: ver esto una vez que ande bien el networking
                 // if (jugador1.tengoAutoridad())
                 //     jugadorControlado = 1;
                 //managerGUI.habilitacionBotonModo(false);
 				break;
 			case 2:
 				jugador2 = jugador;
+                // TODO: ver esto una vez que ande bien el networking
                 // if (jugador2.tengoAutoridad())
                 //     jugadorControlado = 2;
                 //managerGUI.habilitacionBotonModo(true);
@@ -91,7 +93,7 @@ public class ControladorJuego : MonoBehaviour
 	}
 
     // TODO: cambiar esta lógica por una más robusta (que contemple desconexio-
-    // nes de jugadores. no es muy importante, pero estaría bueno.)
+    // nes de jugadores. no es muy importante, pero estaría bueno).
     public int jugadoresConectados()
     {
         return cantidadJugadores;

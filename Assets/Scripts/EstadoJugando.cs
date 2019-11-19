@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 public class EstadoJugando : EstadoAbstracto
@@ -16,10 +16,12 @@ public class EstadoJugando : EstadoAbstracto
         // Realiza la acción correspondiente
         float tiempo_actual = Time.time;
 
+        // TODO: mejorar para que avise al otro jugador de que apretó para reiniciar.
         if (tiempo_actual - juego.tiempo > 7.0f)
         {
             juego.disco.setDireccion(0.0f, 0.0f, 0.0f);
-            //estado = Estados.pinchado;
+            juego.managerGUI.setMensajeControl("Se pinchó!!!");
+            juego.disco.desactivar();
             juego.cambiarEstado(new EstadoPinchado(juego));
         }
     }

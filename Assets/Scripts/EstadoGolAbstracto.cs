@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public abstract class EstadoGolAbstracto : EstadoAbstracto
 {
@@ -9,8 +9,7 @@ public abstract class EstadoGolAbstracto : EstadoAbstracto
 
         if (juego.golesJugador1 == 10 || juego.golesJugador2 == 10)
         {
-            // juego terminado
-            //estado = Estados.fin;
+            // Juego terminado
             juego.cambiarEstado(new EstadoFin(juego));
             juego.resetearDisco(0.0f);
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 public class EstadoPinchado : EstadoAbstracto
@@ -14,9 +14,8 @@ public class EstadoPinchado : EstadoAbstracto
     public override void Ejecutar()
     {
         // Realiza la acción correspondiente
-        juego.managerGUI.setMensajeControl("Se pinchó!!!");
-        juego.disco.desactivar();
 
+        // TODO: mejorar para que avise al otro jugador de que apretó para reiniciar.
         // Esperar input
         if (Input.GetAxis("Mouse ScrollWheel") != 0.0f ||
              Input.GetButton("Fire2") ||
@@ -25,7 +24,6 @@ public class EstadoPinchado : EstadoAbstracto
             juego.disco.activar();
             juego.managerGUI.setMensajeControl("");
             juego.resetearDisco(-3.2f);
-            // estado = Estados.sacaJugador1;
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }
     }

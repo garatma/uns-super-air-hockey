@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class EstadoSacandoJugador2 : EstadoAbstracto
 {
