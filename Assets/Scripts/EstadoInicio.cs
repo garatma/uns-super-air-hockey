@@ -13,7 +13,7 @@ public class EstadoInicio : EstadoAbstracto
     public override void Ejecutar()
     {
         // Realiza la acción correspondiente
-        if (juego.jugadoresConectados == 2)
+        if (juego.jugadoresConectados() == 2)
         {
             juego.disco.activar();
             juego.managerGUI.setMensajeControl("");

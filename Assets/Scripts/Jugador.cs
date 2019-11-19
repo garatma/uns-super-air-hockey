@@ -26,7 +26,7 @@ public class Jugador : NetworkBehaviour
 
 		juego.jugadorConectado(this);
 
-		int jugador = juego.soyJugador();
+		int jugador = juego.jugadoresConectados();
 
 		if ( jugador == 2 )
 		{
@@ -58,29 +58,8 @@ public class Jugador : NetworkBehaviour
 		}
 	}
 
-	// public void move(float movx, float movz)
-	// {
-	// 	direccion = new Vector3(movx, 0.0f, movz);
-	// 	GetComponent<Rigidbody>().position += direccion * velocidad;
-	// 	GetComponent<Rigidbody>().position = new Vector3(
-	// 			Mathf.Clamp(GetComponent<Rigidbody>().position.x,-3.5f,3.5f),
-	// 			0.0f,
-    //             Mathf.Clamp(GetComponent<Rigidbody>().position.z, -6.4f, 6.4f));
-	// }
-	//
-    // public void sacar(Vector2 dir)
-    // {
-    //     direccion = new Vector3(dir.x, 0.0f, dir.y);
-    //     GetComponent<Rigidbody>().position += direccion * velocidad;
-    // }
-	//
-    // public Vector2 getPosicion()
-    // {
-    //     return new Vector2(GetComponent<Rigidbody>().position.x, GetComponent<Rigidbody>().position.z);
-    // }
-	//
-    // public void setPosicion(float x, float y, float z)
-    // {
-    //     GetComponent<Rigidbody>().position = new Vector3(x, y, z);
-    // }
+	public bool tengoAutoridad()
+	{
+		return hasAuthority;
+	}
 }

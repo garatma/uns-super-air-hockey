@@ -17,6 +17,7 @@ public class GUI : MonoBehaviour
     void Start()
     {
         botonModo.onClick.AddListener(oyente);
+        //botonModo.interactable = false;
     }
 
     void oyente()
@@ -37,5 +38,10 @@ public class GUI : MonoBehaviour
         golesGUI_Jugador2[0].text = golesJugador1.ToString();
         golesGUI_Jugador1[1].text = golesJugador2.ToString();
         golesGUI_Jugador2[1].text = golesJugador2.ToString();
+    }
+
+    public void habilitacionBotonModo(bool habilitar)
+    {
+        botonModo.interactable = habilitar;
     }
 }

@@ -11,7 +11,7 @@ public class Disco : MonoBehaviour
 
 	void Start()
 	{
-		desactivar();
+		// desactivar();
 	}
 
     void OnTriggerEnter(Collider colision)
