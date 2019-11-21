@@ -15,14 +15,14 @@ public class EstadoInicio : EstadoAbstracto
     {
         // Realiza la acción correspondiente
         juego.managerGUI.setMensajeControl("");
-        juego.resetearDisco(-3.2f);
         juego.golesJugador1 = 0;
         juego.golesJugador2 = 0;
         juego.managerGUI.setGoles(juego.golesJugador1, juego.golesJugador2);
 
         if (juego.jugadoresConectados() == 2)
         {
-            if (juego.disco != null) juego.disco.activar();
+            juego.resetearDisco(-3.2f);
+            juego.disco.activar();
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }
     }

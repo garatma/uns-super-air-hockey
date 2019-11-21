@@ -19,6 +19,7 @@ public class EstadoGolJugador1 : EstadoGolAbstracto
         {
             // Gol del Jugador1
             juego.cambiarEstado(new EstadoSacaJugador2(juego));
+            juego.sacaJugador(2);
             juego.resetearDisco(3.2f);
         }
     }

@@ -15,10 +15,11 @@ public class EstadoGolJugador2 : EstadoGolAbstracto
         // Realiza la acción correspondiente
         base.EjecutarGol(juego);
 
-        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))      // estado != Estado.fin
+        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))
         {
             // Gol del Jugador2
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
+            juego.sacaJugador(1);
             juego.resetearDisco(-3.2f);
         }
     }

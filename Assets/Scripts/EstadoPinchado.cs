@@ -21,9 +21,9 @@ public class EstadoPinchado : EstadoAbstracto
              Input.GetButton("Fire2") ||
              Input.GetButton("Fire1"))
         {
-            if (juego.disco != null) juego.disco.activar();
+            juego.disco.activar();
             juego.managerGUI.setMensajeControl("");
-            if (juego.disco != null) juego.resetearDisco(-3.2f);
+            juego.resetearDisco(-3.2f);
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }
     }

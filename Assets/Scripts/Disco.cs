@@ -11,14 +11,8 @@ public class Disco : NetworkBehaviour
 
 	void Start()
 	{
-		// desactivar();
+		desactivar();
 	}
-
-	public override void OnStartServer()
-	{
-		base.OnStartServer();
-	}
-
 
 	[ServerCallback]
     void OnTriggerEnter(Collider colision)
@@ -60,6 +54,8 @@ public class Disco : NetworkBehaviour
         }
 	}
 
+
+
 	void Update()
 	{
 		GetComponent<Rigidbody>().position += direccion * velocidad * Time.deltaTime * 40;
@@ -94,9 +90,4 @@ public class Disco : NetworkBehaviour
     {
         GetComponent<Rigidbody>().position = new Vector3(x, y, z);
     }
-
-	public void asignarJuego(ControladorJuego nuevoJuego)
-	{
-		juego = nuevoJuego;
-	}
 }

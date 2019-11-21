@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class ControladorJuego : MonoBehaviour
+public class ControladorJuego : NetworkBehaviour
 {
-    public Jugador jugador1;
-    public Jugador jugador2;
-	public GameObject areaJugador1;
-	public GameObject areaJugador2;
-    public Material materialJugador2;
-    public int jugadorControlado = 1;
     public int golesJugador1;
     public int golesJugador2;
-    private int cantidadJugadores = 2;
+    private int cantidadJugadores = 0;
+    private int jugadorControlado = 0;
+
+    private int jugadorQueSaca = 1;
 
     public Disco disco;
 
@@ -72,55 +70,66 @@ public class ControladorJuego : MonoBehaviour
         }
     }
 
-	public void nuevoJugador(Jugador jugador, int numero)
-	{
-        cantidadJugadores = numero;
-        jugador.asignarJuego(this);
-        Debug.Log("jugadores: "+cantidadJugadores);
-		switch (cantidadJugadores)
-		{
-			case 1:
-				jugador1 = jugador;
-                jugador1.asignarArea(areaJugador1);
-                // TODO: ver esto una vez que ande bien el networking
-                if (jugador1.tengoAutoridad())
-                    jugadorControlado = 1;
-				break;
-                managerGUI.habilitarBoton(false);
-			case 2:
-                Debug.Log("se conectó el jugador 2");
-				jugador2 = jugador;
-                jugador2.asignarMaterial(materialJugador2);
-                jugador2.asignarArea(areaJugador2);
-                jugador2.asignarSentidoMovimiento(-1.0f);
-                managerGUI.habilitarBoton(true);
-                // TODO: ver esto una vez que ande bien el networking
-                if (jugador2.tengoAutoridad())
+    [ClientRpc]
+    public void RpcReiniciarTodo()
+    {
+        resetearDisco(0.0f);
+        disco.desactivar();
+        cantidadJugadores = 0;
+        managerGUI.habilitarBoton(false);
+        jugadorControlado = 0;
+        resetearDisco(0.0f);
+        cambiarEstado(new EstadoInicio(this));
+    }
+
+    /* 
+        TODO: 1) COMMAND para avisar que hubo un gol
+              2) RPC para avisar a los jugadores del gol
+    */
+
+    [ClientRpc]
+    public void RpcNuevoJugador(int cantidadJugadores, int golesJugador1, int golesJugador2, int quienSaca)
+    {
+        this.cantidadJugadores = cantidadJugadores;
+        this.golesJugador1 = golesJugador1;
+        this.golesJugador2 = golesJugador2;
+        switch (cantidadJugadores)
+        {
+            case 1:
+                // el primer cliente viene por acá y controla al jugador1.
+                if (jugadorControlado == 0) jugadorControlado = 1;
+                break;
+            case 2:
+                // el primer cliente que por acá no debería hacer nada.
+                // el segundo cliente viene por acá y controla al jugador2.
+                if (jugadorControlado == 0) 
+                {
                     jugadorControlado = 2;
-				break;
-		}
-	}
+                }
+                else if (jugadorControlado == 1)
+                {
+                    if (quienSaca == 1)
+                        cambiarEstado(new EstadoSacaJugador1(this));
+                    else if (quienSaca == 2)
+                        cambiarEstado(new EstadoSacaJugador2(this));
+                }
+                managerGUI.habilitarBoton(true);
+                break;
+        }
 
-    public void asignarDisco(Disco nuevoDisco)
-    {
-        disco = nuevoDisco;
+            cambiarEstado(new EstadoSacaJugador1(this));
     }
 
-    public void eliminarDisco()
+    public void sacaJugador(int jugador)
     {
-        disco = null;
+        jugadorQueSaca = jugador;
     }
 
-    public void eliminarJugador(int numeroJugador)
+    public int getJugadorQueSaca()
     {
-        if (numeroJugador == 1)
-            jugador1 = null;
-        else if (numeroJugador == 2)
-            jugador2 = null;
+        return jugadorQueSaca;
     }
 
-    // TODO: cambiar esta lógica por una más robusta (que contemple desconexio-
-    // nes de jugadores. no es muy importante, pero estaría bueno).
     public int jugadoresConectados()
     {
         return cantidadJugadores;
@@ -162,5 +171,15 @@ public class ControladorJuego : MonoBehaviour
     public void cambiarEstado(EstadoAbstracto estadoNuevo)
     {
         estado = estadoNuevo;
+    }
+
+    public int getGolesJugador1()
+    {
+        return golesJugador1;
+    }
+
+    public int getGolesJugador2()
+    {
+        return golesJugador2;   
     }
 }
