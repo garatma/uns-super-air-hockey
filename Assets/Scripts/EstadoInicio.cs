@@ -22,7 +22,7 @@ public class EstadoInicio : EstadoAbstracto
 
         if (juego.jugadoresConectados() == 2)
         {
-            juego.disco.activar();
+            if (juego.disco != null) juego.disco.activar();
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }
     }

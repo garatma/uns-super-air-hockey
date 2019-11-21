@@ -17,9 +17,7 @@ public class GUI : MonoBehaviour
     void Start()
     {
         botonModo.onClick.AddListener(oyente);
-        // TODO: poner esta opción en verdadero una vez que el networking
-        // funcione correctamente.
-        //botonModo.interactable = false;
+        botonModo.interactable = false;
     }
 
     void oyente()
@@ -42,7 +40,7 @@ public class GUI : MonoBehaviour
         golesGUI_Jugador2[1].text = golesJugador2.ToString();
     }
 
-    public void habilitacionBotonModo(bool habilitar)
+    public void habilitarBoton(bool habilitar)
     {
         botonModo.interactable = habilitar;
     }

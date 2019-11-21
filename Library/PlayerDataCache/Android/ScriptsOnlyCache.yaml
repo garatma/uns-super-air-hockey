@@ -1,17 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ConexionJugador
     - ControladorJuego
     - Disco
     - GUI
     - Jugador
     - MenuPrincipal
+    - Server
     Mirror.Components.dll:
     - Mirror.NetworkTransform
     Mirror.dll:
     - Mirror.NetworkIdentity
-    - Mirror.NetworkManager
     - Mirror.NetworkManagerHUD
     - Mirror.TelepathyTransport
     Unity.2D.Tilemap.Editor.dll:
@@ -55,8 +54,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
     - Class: 23
@@ -73,11 +70,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
     - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
       Script: {instanceID: 0}
     - Class: 109
       Script: {instanceID: 0}
@@ -185,8 +178,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9874}
     - Class: 114
-      Script: {instanceID: 10024}
-    - Class: 114
       Script: {instanceID: 10042}
     - Class: 114
       Script: {instanceID: 10102}
@@ -213,13 +204,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12272}
-    - Class: 114
       Script: {instanceID: 12332}
     - Class: 114
       Script: {instanceID: 12446}
     - Class: 114
       Script: {instanceID: 12680}
+    - Class: 114
+      Script: {instanceID: 16354}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -257,7 +248,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 54601ebb8570a1d7d15e05d9cf46ca14
+      Hash: e4b2f775b8a542f53d19b99023a976a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorJuego
@@ -1391,7 +1382,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 13c26d266a08e21b662bc5bb9f16c0c5
+      Hash: b1544e1bbfc85e005e6a7b5cee0ea5c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Disco
@@ -1535,7 +1526,7 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: e068ab6383b73d5a0170e66332b5ef05
+      Hash: b1544e1bbfc85e005e6a7b5cee0ea5c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Jugador
@@ -2055,6 +2046,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5f463a953baf3d039917372115138c30
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Server
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity

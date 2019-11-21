@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Disco : MonoBehaviour
+public class Disco : NetworkBehaviour
 {
 	public ControladorJuego juego;
-	public MeshCollider meshCollider;
 	private Vector3 direccion;
     private float velocidad = 0.3f;
 
@@ -14,6 +14,13 @@ public class Disco : MonoBehaviour
 		// desactivar();
 	}
 
+	public override void OnStartServer()
+	{
+		base.OnStartServer();
+	}
+
+
+	[ServerCallback]
     void OnTriggerEnter(Collider colision)
 	{
 		GameObject obj = colision.gameObject;
@@ -65,12 +72,12 @@ public class Disco : MonoBehaviour
 
 	public void activar()
 	{
-		meshCollider.enabled = true;
+		GetComponent<MeshCollider>().enabled = true;
 	}
 
 	public void desactivar()
 	{
-		meshCollider.enabled = false;
+		GetComponent<MeshCollider>().enabled = false;
 	}
 
     public void setDireccion(float x, float y, float z)
@@ -87,4 +94,9 @@ public class Disco : MonoBehaviour
     {
         GetComponent<Rigidbody>().position = new Vector3(x, y, z);
     }
+
+	public void asignarJuego(ControladorJuego nuevoJuego)
+	{
+		juego = nuevoJuego;
+	}
 }

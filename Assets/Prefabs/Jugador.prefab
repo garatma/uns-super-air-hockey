@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8530392449095668893}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.32, z: -6}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &8530392449095668887
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 824026369
+  m_AssetId: 6bbd175ff5fbb3f4795031c5bc35dfc3
+  m_SceneId: 0
 --- !u!114 &6153128129285485401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  juego: {fileID: 4922145988913852097, guid: c3ceb014337cf6a42952803cac684008, type: 3}
+  juego: {fileID: 0}
   zonaJugador1: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9,
     type: 3}
   zonaJugador2: {fileID: 1155232403491100319, guid: 7dc5c0e84e2bd6947a08e6d9ba993e24,

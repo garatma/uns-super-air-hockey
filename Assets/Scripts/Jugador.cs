@@ -6,52 +6,31 @@ using Mirror;
 public class Jugador : NetworkBehaviour
 {
 	public ControladorJuego juego;
-    private Vector3 direccion;
-    private float velocidad = 0.2f;
 
-	public GameObject zonaJugador1;
-	public GameObject zonaJugador2;
-	private GameObject zona;
-	private float anchoZona, altoZona;
+	private GameObject area;
+	private float anchoArea, altoArea;
 	private float anchoVentana, altoVentana;
 
-	public Material materialJugador2;
+	private bool areaAsignada = false;
 
-	public int sentidoMovimiento = 1;
+	private float sentidoMovimiento = 1.0f;
 
 	void Start()
 	{
 		anchoVentana = Screen.width;
 		altoVentana = Screen.height;
-
-		juego.jugadorConectado(this);
-
-		int jugador = juego.jugadoresConectados();
-
-		if ( jugador == 2 )
-		{
-			GetComponent<Renderer>().material = materialJugador2;
-			zona = zonaJugador2;
-		}
-		else
-		{
-			zona = zonaJugador1;
-		}
-
-		anchoZona = zona.transform.localScale.x * 1.0f;
-		altoZona = zona.transform.localScale.z * 1.0f;
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
-		if (hasAuthority)
+		if (hasAuthority && areaAsignada)
 		{
 			Vector3 posicionActual = Vector3.one;
-			posicionActual.x = (anchoZona/anchoVentana) * Input.mousePosition.x;
-			posicionActual.z = (altoZona/altoVentana) * Input.mousePosition.y;
+			posicionActual.x = (anchoArea/anchoVentana) * Input.mousePosition.x;
+			posicionActual.z = (altoArea/altoVentana) * Input.mousePosition.y;
 
-			posicionActual.x += zona.transform.position.x - (anchoZona/2.0f);
-			posicionActual.z += zona.transform.position.z - (altoZona/2.0f);
+			posicionActual.x += area.transform.position.x - (anchoArea/2.0f);
+			posicionActual.z += area.transform.position.z - (altoArea/2.0f);
 
 			posicionActual.y = 0.32f;
 			transform.position = posicionActual;
@@ -61,5 +40,28 @@ public class Jugador : NetworkBehaviour
 	public bool tengoAutoridad()
 	{
 		return hasAuthority;
+	}
+
+	public void asignarJuego(ControladorJuego nuevoJuego)
+	{
+		juego = nuevoJuego;
+	}
+
+	public void asignarArea(GameObject nuevaArea)
+	{
+		area = nuevaArea;
+		anchoArea = area.transform.localScale.x * 1.0f;
+		altoArea = area.transform.localScale.z * 1.0f;
+		areaAsignada = true;
+	}
+
+	public void asignarMaterial(Material nuevoMaterial)
+	{
+		GetComponent<Renderer>().material = nuevoMaterial;
+	}
+
+	public void asignarSentidoMovimiento(float nuevoSentidoMovimiento)
+	{
+		sentidoMovimiento = nuevoSentidoMovimiento;
 	}
 }

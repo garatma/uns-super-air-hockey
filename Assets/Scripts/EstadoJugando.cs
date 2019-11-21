@@ -19,9 +19,9 @@ public class EstadoJugando : EstadoAbstracto
         // TODO: mejorar para que avise al otro jugador de que apretó para reiniciar.
         if (tiempo_actual - juego.tiempo > 7.0f)
         {
-            juego.disco.setDireccion(0.0f, 0.0f, 0.0f);
+            if (juego.disco != null) juego.disco.setDireccion(0.0f, 0.0f, 0.0f);
             juego.managerGUI.setMensajeControl("Se pinchó!!!");
-            juego.disco.desactivar();
+            if (juego.disco != null) juego.disco.desactivar();
             juego.cambiarEstado(new EstadoPinchado(juego));
         }
     }
