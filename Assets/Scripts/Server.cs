@@ -20,7 +20,7 @@ public class Server : NetworkManager
         Transform start = numPlayers == 0 ? spawnJugador1 : spawnJugador2;
         GameObject playerASpawnear;
         playerASpawnear = numPlayers == 0 ? jugador1 : jugador2;
-        GameObject player = Instantiate(playerASpawnear, start.position, start.rotation); 
+        GameObject player = Instantiate(playerASpawnear, start.position, start.rotation);
         NetworkServer.AddPlayerForConnection(conn, player);
 
         int golesJugador1 = juego.getGolesJugador1(),

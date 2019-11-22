@@ -4,6 +4,7 @@ using UnityEngine;
 public class EstadoEsperandoReinicio : EstadoAbstracto
 {
     public ControladorJuego juego;
+    private ingresoInput = false;
 
     public EstadoEsperandoReinicio(ControladorJuego ctrlJuego)
     {
@@ -16,8 +17,10 @@ public class EstadoEsperandoReinicio : EstadoAbstracto
     {
         // Realiza la acción correspondiente
         juego.disco.desactivar();
-        if (Input.GetAxis("Mouse ScrollWheel") != 0.0f || Input.GetButton("Fire2") || Input.GetButton("Fire1"))
-             juego.cambiarEstado(new EstadoInicio(juego));
-
+        if (!ingresoInput && Input.GetAxis("Mouse ScrollWheel") != 0.0f || Input.GetButton("Fire2") || Input.GetButton("Fire1"))
+        {
+            ingresoInput = true;
+            juego.cambiarEstado(new EstadoInicio(juego));
+        }
     }
 }

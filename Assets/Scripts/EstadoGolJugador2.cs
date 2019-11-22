@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class EstadoGolJugador2 : EstadoGolAbstracto
 {
@@ -12,15 +13,16 @@ public class EstadoGolJugador2 : EstadoGolAbstracto
 
     public override void Ejecutar()
     {
+        Debug.Log("gol jugador 2");
         // Realiza la acción correspondiente
         base.EjecutarGol(juego);
 
         if (!typeof(EstadoFin).Equals(juego.estado.GetType()))
         {
             // Gol del Jugador2
-            juego.cambiarEstado(new EstadoSacaJugador1(juego));
             juego.sacaJugador(1);
             juego.resetearDisco(-3.2f);
+            juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }
     }
 }
