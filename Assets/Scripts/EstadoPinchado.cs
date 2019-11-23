@@ -4,6 +4,7 @@ using UnityEngine;
 public class EstadoPinchado : EstadoAbstracto
 {
     public ControladorJuego juego;
+    private bool inputLocal = false;
 
     public EstadoPinchado(ControladorJuego ctrlJuego)
     {
@@ -15,16 +16,20 @@ public class EstadoPinchado : EstadoAbstracto
     {
         // Realiza la acción correspondiente
 
-        // TODO: mejorar para que avise al otro jugador de que apretó para reiniciar.
-        // Esperar input
-        if (Input.GetAxis("Mouse ScrollWheel") != 0.0f ||
-             Input.GetButton("Fire2") ||
-             Input.GetButton("Fire1"))
-        {
+		if (!inputLocal && base.inputReinicio())
+		{
+			juego.inputLocal();
+			inputLocal = true;
+			juego.managerGUI.setMensajeControl("Esperando reinicio del otro jugador");
+		}
+		if (juego.inputAmbosJugadores())
+		{
+			inputLocal = false;
+			juego.resetInputs();
             juego.disco.activar();
             juego.managerGUI.setMensajeControl("");
             juego.resetearDisco(-3.2f);
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
-        }
+		}
     }
 }

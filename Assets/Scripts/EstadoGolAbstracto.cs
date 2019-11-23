@@ -5,7 +5,6 @@ public abstract class EstadoGolAbstracto : EstadoAbstracto
 {
     public void EjecutarGol(ControladorJuego juego)
     {
-        Debug.Log("gol de algún jugador. cambiando labels");
         // Realiza la acción correspondiente
         juego.managerGUI.setGoles(juego.golesJugador1, juego.golesJugador2);
 

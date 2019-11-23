@@ -10,8 +10,8 @@ public class ControladorJuego : NetworkBehaviour
     public int golesJugador2 = 0;
     private int cantidadJugadores = 0;
     private int jugadorControlado = 0;
-
     private int jugadorQueSaca = 1;
+	private int inputs = 0;
 
     public Disco disco;
 
@@ -77,26 +77,19 @@ public class ControladorJuego : NetworkBehaviour
         disco.setDireccion(0.0f, 0.0f, 0.0f);
         disco.desactivar();
         cantidadJugadores = 0;
-        jugadorControlado = 0;
         jugadorQueSaca = 1;
         golesJugador1 = 0;
         golesJugador2 = 0;
         managerGUI.habilitarBoton(false);
+		managerGUI.setMensajeControl("");
         resetearDisco(0.0f);
         cambiarEstado(new EstadoInicio(this));
     }
-
-    /*
-        TODO: 1) COMMAND para avisar que hubo un gol
-              2) RPC para avisar a los jugadores del gol
-    */
 
     [ClientRpc]
     public void RpcNuevoJugador(int cantidadJugadores, int golesJugador1, int golesJugador2, int quienSaca)
     {
         Debug.Log(cantidadJugadores);
-        Debug.Log(golesJugador1);
-        Debug.Log(golesJugador2);
         Debug.Log(quienSaca);
         this.cantidadJugadores = cantidadJugadores;
         this.golesJugador1 = golesJugador1;
@@ -108,6 +101,7 @@ public class ControladorJuego : NetworkBehaviour
                 // el primer cliente viene por acá y controla al jugador1.
                 if (jugadorControlado == 0) jugadorControlado = 1;
                 managerGUI.habilitarBoton(false);
+				disco.desactivar();
                 break;
             case 2:
                 // el primer cliente que entra acá no debería hacer nada.
@@ -137,6 +131,38 @@ public class ControladorJuego : NetworkBehaviour
         return jugadorQueSaca;
     }
 
+	public bool inputAmbosJugadores()
+	{
+		return inputs == 2;	
+	}
+
+	public void inputLocal()
+	{
+		CmdInputLocal(1);
+		Debug.Log("cliente: input local");
+	}
+
+	[Command]
+	public void CmdInputLocal(int inputJugador)
+	{
+		inputs += inputJugador;
+		RpcInputLocal(inputs);
+		Debug.Log("server: me avisaron de un input");
+	}
+
+	[ClientRpc]
+	public void RpcInputLocal(int inputsServer)
+	{
+		Debug.Log("inputs server: "+inputsServer);
+		inputs = inputsServer;
+		Debug.Log("inputs: "+inputs);
+	}
+	
+	public void resetInputs()
+	{
+		inputs = 0;
+	}
+
     public int jugadoresConectados()
     {
         return cantidadJugadores;
@@ -158,10 +184,14 @@ public class ControladorJuego : NetworkBehaviour
         tiempo = Time.time;
     }
 
+    public void cambiarEstado(EstadoAbstracto estadoNuevo)
+    {
+        estado = estadoNuevo;
+    }
+
     [ClientRpc]
     public void RpcGolJugador2()
     {
-        Debug.Log("juego: gol jugador 2");
         golesJugador2++;
         cambiarEstado(new EstadoGolJugador2(this));
     }
@@ -169,14 +199,8 @@ public class ControladorJuego : NetworkBehaviour
     [ClientRpc]
     public void RpcGolJugador1()
     {
-        Debug.Log("juego: gol jugador 1");
         golesJugador1++;
         cambiarEstado(new EstadoGolJugador1(this));
-    }
-
-    public void cambiarEstado(EstadoAbstracto estadoNuevo)
-    {
-        estado = estadoNuevo;
     }
 
     public int getGolesJugador1()

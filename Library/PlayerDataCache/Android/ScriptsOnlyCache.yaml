@@ -119,11 +119,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12334}
+      Script: {instanceID: 12332}
     - Class: 114
-      Script: {instanceID: 12448}
+      Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -204,11 +204,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12296}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12448}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -248,7 +248,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 518895a1bedb020ceae037f4b6026196
+      Hash: 6b6751988251b5c8701fba7a14d0b9b3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorJuego
@@ -258,6 +258,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoInicio
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -362,10 +368,22 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoSacaJugador1
+  - hash:
+      serializedVersion: 2
       Hash: 8e0313c6f5e2ce35991fec2d64f8eaab
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoJugando
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -384,6 +402,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkTransform
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoSacaJugador2
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -416,6 +440,12 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoPinchado
+  - hash:
+      serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -426,6 +456,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoEsperandoReinicio
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -1040,6 +1076,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoFin
+  - hash:
+      serializedVersion: 2
       Hash: 3375c3d749f8f4cad889721b431bdc27
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1442,6 +1484,12 @@ ScriptsOnlyBuild:
     className: MenuPrincipal
   - hash:
       serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoGolJugador2
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1470,12 +1518,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 0c1087899e96d15357d6b5a0ea9240b7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ConexionJugador
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -1566,6 +1608,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoGolJugador1
   - hash:
       serializedVersion: 2
       Hash: 986df0dfab7ffbd155b81bbb8bacea63
@@ -1800,6 +1848,12 @@ ScriptsOnlyBuild:
     assemblyName: Vuforia.UnityExtensions.dll
     namespaceName: Vuforia
     className: WireframeTrackableEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoSacandoJugador2
   - hash:
       serializedVersion: 2
       Hash: 20eeaeae829475b5e354d1f626c51a2b
@@ -2056,4 +2110,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/manuel/proyecto-iap/Builds/build.apk
+  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk

@@ -35,28 +35,25 @@ public class Server : NetworkManager
         base.OnServerDisconnect(conn);
     }
 
-    // TODO: agregar OnPlayerDisconnect o algo así
-    /*
-    public override void OnServerRemovePlayer(NetworkConnection conn)
-    {
-        Jugador jugadorAux;
-        int numeroJugador;
-        if (jugador1 == null)
-        {
-            jugadorAux = jugador1;
-            numeroJugador = 1;
-        }
-        else if (jugador2 == null)
-        {
-            jugadorAux = jugador2;
-            numeroJugador = 2;
-        }
+	public override void OnStopServer()
+	{
+		juego.RpcReiniciarTodo();
+		base.OnStopServer();
+	}
 
-        NetworkServer.Destroy(jugadorAux);
+	public override void OnStopHost()
+	{
+		juego.RpcReiniciarTodo();
+		base.OnStopHost();
+	}
 
-        base.OnServerDisconnect(conn);
-
-        juego.eliminarJugador(numeroJugador);
+	public override void OnStartHost() {
+    	juego.RpcReiniciarTodo();
+		base.OnStartHost();
     }
-    */
+
+	public override void OnStartServer() {
+    	juego.RpcReiniciarTodo();
+		base.OnStartServer();
+    }
 }

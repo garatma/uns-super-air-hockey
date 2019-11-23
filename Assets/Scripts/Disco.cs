@@ -44,13 +44,11 @@ public class Disco : NetworkBehaviour
         }
         else if (colision.gameObject.tag == "ArcoJugador1")
         {
-			Debug.Log("disco: gol jugador2");
             direccion = new Vector3(0.0f, 0.0f, 0.0f);
             juego.RpcGolJugador2();
         }
         else if (colision.gameObject.tag == "ArcoJugador2")
         {
-			Debug.Log("disco: gol jugador1");
             direccion = new Vector3(0.0f, 0.0f, 0.0f);
             juego.RpcGolJugador1();
         }

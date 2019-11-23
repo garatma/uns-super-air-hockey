@@ -13,7 +13,6 @@ public class EstadoGolJugador1 : EstadoGolAbstracto
 
     public override void Ejecutar()
     {
-        Debug.Log("gol jugador 1");
         // Realiza la acción correspondiente
         base.EjecutarGol(juego);
 
