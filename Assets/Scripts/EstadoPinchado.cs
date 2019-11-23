@@ -18,14 +18,13 @@ public class EstadoPinchado : EstadoAbstracto
 
 		if (!inputLocal && base.inputReinicio())
 		{
-			juego.inputLocal();
+			juego.CmdHostReset();
 			inputLocal = true;
-			juego.managerGUI.setMensajeControl("Esperando reinicio del otro jugador");
 		}
-		if (juego.inputAmbosJugadores())
+		if (juego.inputHost())
 		{
 			inputLocal = false;
-			juego.resetInputs();
+			juego.resetearControlReinicio();
             juego.disco.activar();
             juego.managerGUI.setMensajeControl("");
             juego.resetearDisco(-3.2f);

@@ -11,7 +11,7 @@ public class ControladorJuego : NetworkBehaviour
     private int cantidadJugadores = 0;
     private int jugadorControlado = 0;
     private int jugadorQueSaca = 1;
-	private int inputs = 0;
+	private bool resetHost = false;
 
     public Disco disco;
 
@@ -131,36 +131,27 @@ public class ControladorJuego : NetworkBehaviour
         return jugadorQueSaca;
     }
 
-	public bool inputAmbosJugadores()
+	public bool inputHost()
 	{
-		return inputs == 2;	
-	}
-
-	public void inputLocal()
-	{
-		CmdInputLocal(1);
-		Debug.Log("cliente: input local");
+		return resetHost;
 	}
 
 	[Command]
-	public void CmdInputLocal(int inputJugador)
+	public void CmdHostReset()
 	{
-		inputs += inputJugador;
-		RpcInputLocal(inputs);
-		Debug.Log("server: me avisaron de un input");
+		resetHost = true;
+		RpcReset();
 	}
 
 	[ClientRpc]
-	public void RpcInputLocal(int inputsServer)
+	public void RpcReset()
 	{
-		Debug.Log("inputs server: "+inputsServer);
-		inputs = inputsServer;
-		Debug.Log("inputs: "+inputs);
+		resetHost = true;
 	}
 	
-	public void resetInputs()
+	public void resetearControlReinicio()
 	{
-		inputs = 0;
+		resetHost = false;
 	}
 
     public int jugadoresConectados()

@@ -17,14 +17,13 @@ public class EstadoEsperandoReinicio : EstadoAbstracto
         // Realiza la acción correspondiente
 		if (!inputLocal && base.inputReinicio())
 		{
-			juego.inputLocal();
+			juego.CmdHostReset();
 			inputLocal = true;
-			juego.managerGUI.setMensajeControl("Esperando reinicio del otro jugador");
 		}
-		if (juego.inputAmbosJugadores())
+		if (juego.inputHost())
 		{
 			inputLocal = false;
-			juego.resetInputs();
+			juego.resetearControlReinicio();
 			juego.cambiarEstado(new EstadoInicio(juego));
 		}
     }
