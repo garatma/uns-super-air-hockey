@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 
 public class EstadoFin : EstadoAbstracto
 {
@@ -12,12 +13,13 @@ public class EstadoFin : EstadoAbstracto
 
     public override void Ejecutar()
     {
+        juego.disco.desactivar();
         // Realiza la acción correspondiente
         if (juego.golesJugador1 == 10)
-            juego.managerGUI.setMensajeControl("Ganó el jugador 1! Esperando a que el host apriete algún botón para reiniciar.");
+            SceneManager.LoadScene(2);
         else
-            juego.managerGUI.setMensajeControl("Ganó el jugador 2! Esperando a que el host apriete algún botón para reiniciar.");
-		juego.disco.desactivar();
-        juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
+            SceneManager.LoadScene(3);
+        
+        //juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
     }
 }
