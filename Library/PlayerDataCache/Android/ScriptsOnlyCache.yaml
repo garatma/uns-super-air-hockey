@@ -5,7 +5,6 @@ ScriptsOnlyBuild:
     - Disco
     - GUI
     - Jugador
-    - MenuFinJvJ
     - MenuPrincipal
     - Server
     Mirror.Components.dll:
@@ -50,51 +49,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
-    Assets/Scenes/EscenaFinJvJ.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9792}
-    - Class: 114
-      Script: {instanceID: 10102}
-    - Class: 114
-      Script: {instanceID: 10658}
-    - Class: 114
-      Script: {instanceID: 11396}
-    - Class: 114
-      Script: {instanceID: 11686}
-    - Class: 114
-      Script: {instanceID: 11958}
-    - Class: 114
-      Script: {instanceID: 12044}
-    - Class: 114
-      Script: {instanceID: 12680}
-    - Class: 114
-      Script: {instanceID: 18408}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
     Assets/Scenes/EscenaJvJ.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -169,7 +123,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12680}
+      Script: {instanceID: 12678}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -254,7 +208,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12448}
     - Class: 114
-      Script: {instanceID: 12680}
+      Script: {instanceID: 12678}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1896,12 +1850,6 @@ ScriptsOnlyBuild:
     className: WireframeTrackableEventHandler
   - hash:
       serializedVersion: 2
-      Hash: ca322947b992d23e1c493d8709d4aca6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EstadoSacandoJugador2
-  - hash:
-      serializedVersion: 2
       Hash: 20eeaeae829475b5e354d1f626c51a2b
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -2162,5 +2110,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity
   - Assets/Scenes/EscenaJvJ.unity
-  - Assets/Scenes/EscenaFinJvJ.unity
-  playerPath: C:/Users/LUCIO/Desktop/proye4.apk
+  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk

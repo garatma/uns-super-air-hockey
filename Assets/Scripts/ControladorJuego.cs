@@ -136,6 +136,7 @@ public class ControladorJuego : NetworkBehaviour
 		return resetHost;
 	}
 
+	// el server lo ejecuta
 	[Command]
 	public void CmdHostReset()
 	{
@@ -143,6 +144,7 @@ public class ControladorJuego : NetworkBehaviour
 		RpcReset();
 	}
 
+	// lo ejecutan los clientes
 	[ClientRpc]
 	public void RpcReset()
 	{

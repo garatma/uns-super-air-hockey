@@ -16,7 +16,7 @@ public class EstadoGolJugador1 : EstadoGolAbstracto
         // Realiza la acción correspondiente
         base.EjecutarGol(juego);
 
-        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))      // estado != Estados.fin
+        if (!typeof(EstadoFin).Equals(juego.estado.GetType()))
         {
             // Gol del Jugador1
             juego.sacaJugador(2);
