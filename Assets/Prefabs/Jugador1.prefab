@@ -128,7 +128,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 2787789131
+  m_SceneId: 720190104
 --- !u!114 &4839932035495885009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +159,4 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   area: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9, type: 3}
+  invertirMovJugador2: 1

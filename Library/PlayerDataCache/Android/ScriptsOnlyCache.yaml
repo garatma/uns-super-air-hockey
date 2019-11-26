@@ -95,35 +95,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10102}
     - Class: 114
-      Script: {instanceID: 10490}
+      Script: {instanceID: 10492}
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10660}
     - Class: 114
-      Script: {instanceID: 10666}
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 10802}
+      Script: {instanceID: 10804}
     - Class: 114
-      Script: {instanceID: 10824}
+      Script: {instanceID: 10826}
     - Class: 114
-      Script: {instanceID: 10832}
+      Script: {instanceID: 10834}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11648}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 12044}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12084}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 12118}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 12334}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12448}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -180,35 +180,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10102}
     - Class: 114
-      Script: {instanceID: 10346}
+      Script: {instanceID: 10348}
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10660}
     - Class: 114
-      Script: {instanceID: 10692}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10834}
+      Script: {instanceID: 10836}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11686}
+      Script: {instanceID: 11688}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 12044}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12194}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12294}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12448}
+      Script: {instanceID: 12450}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -456,6 +456,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuFinJvJ
   - hash:
       serializedVersion: 2
       Hash: ca322947b992d23e1c493d8709d4aca6
@@ -1574,7 +1580,7 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: 27b55304b4f1f5ec1c94fd40e53bed94
+      Hash: 90e8ee24c1bfaa585dbeb7dc8cae5197
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Jugador
@@ -2100,14 +2106,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuFinJvJ
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk
+  playerPath: C:/Users/iap/Proyecto-IAP/Proye-Final1.apk

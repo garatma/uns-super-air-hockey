@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6372100645417558014}
   - component: {fileID: 6248398566127837109}
   m_Layer: 0
-  m_Name: Jugador2 1
+  m_Name: Jugador2
   m_TagString: Jugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 912157722
+  m_AssetId: 4eb98ec52e0db1446aea21a7fe09ad13
+  m_SceneId: 0
 --- !u!114 &6372100645417558014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,4 +158,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  area: {fileID: 1155232403491100319, guid: 7dc5c0e84e2bd6947a08e6d9ba993e24, type: 3}
+  area: {fileID: 7507021017517065345, guid: c01bd93b5069300499a999ad3768fde9, type: 3}
+  invertirMovJugador2: -1
