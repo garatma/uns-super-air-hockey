@@ -13,7 +13,16 @@ public class EstadoInicio : EstadoAbstracto
     public override void Ejecutar()
     {
         // Realiza la acción correspondiente
+<<<<<<< Updated upstream
         if (juego.jugadoresConectados == 2)
+=======
+        juego.managerGUI.setMensajeControl("");
+        juego.golesJugador1 = 0;
+        juego.golesJugador2 = 0;
+        juego.managerGUI.setGoles(juego.golesJugador1, juego.golesJugador2);
+
+        if (juego.jugadoresConectados() == 1)
+>>>>>>> Stashed changes
         {
             juego.disco.activar();
             juego.managerGUI.setMensajeControl("");

@@ -7,6 +7,6 @@ public class MenuPrincipal : MonoBehaviour
 {
     public void Jugar()
         {
-            SceneManager.LoadScene(1);
+            
         }
 }

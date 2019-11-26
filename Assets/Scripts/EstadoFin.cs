@@ -12,6 +12,7 @@ public class EstadoFin : EstadoAbstracto
 
     public override void Ejecutar()
     {
+<<<<<<< Updated upstream
         // Realiza la acción correspondiente
         if (juego.golesJugador1 == 10)
             juego.managerGUI.setMensajeControl("Ganó el jugador 1! Apriete algún botón para reiniciar.");
@@ -21,3 +22,16 @@ public class EstadoFin : EstadoAbstracto
         juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
     }
 }
+=======
+		juego.disco.desactivar();
+        juego.cambiarVista(1);
+		juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
+
+        // Realiza la acción correspondiente
+        if (juego.golesJugador1 == 10)
+			juego.managerGUI.setMensajeControl("Ganó el jugador 1! Esperando que el host apriete algún botón para reiniciar.");
+		else
+            juego.managerGUI.setMensajeControl("Ganó el jugador 2! Esperando que el host apriete algún botón para reiniciar.");
+	}
+}
+>>>>>>> Stashed changes

@@ -8,7 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenaMenu.unity
     guid: 9179e9021e3682f498d2df8a3ba5403b
+<<<<<<< Updated upstream
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
+=======
+  - enabled: 0
+    path: Assets/Scenes/EscenaJvJ.unity
+>>>>>>> Stashed changes
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/EscenaFinJvJ.unity
+    guid: 9132ad98525a8ba479e4bb5a9744b563
   m_configObjects: {}

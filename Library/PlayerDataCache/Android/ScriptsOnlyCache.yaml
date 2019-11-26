@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - Disco
     - GUI
     - Jugador
+    - MenuFinJvJ
     - MenuPrincipal
     Mirror.Components.dll:
     - Mirror.NetworkTransform
@@ -50,7 +51,56 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
+<<<<<<< Updated upstream
     Assets/Scenes/EscenaMenu.unity:
+=======
+    Assets/Scenes/EscenaFinJvJ.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9792}
+    - Class: 114
+      Script: {instanceID: 10102}
+    - Class: 114
+      Script: {instanceID: 10284}
+    - Class: 114
+      Script: {instanceID: 10660}
+    - Class: 114
+      Script: {instanceID: 11398}
+    - Class: 114
+      Script: {instanceID: 11688}
+    - Class: 114
+      Script: {instanceID: 11960}
+    - Class: 114
+      Script: {instanceID: 12046}
+    - Class: 114
+      Script: {instanceID: 12680}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/EscenaJvJ.unity:
+>>>>>>> Stashed changes
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -96,18 +146,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10102}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 10346}
+=======
+      Script: {instanceID: 10492}
+>>>>>>> Stashed changes
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10660}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 10692}
     - Class: 114
       Script: {instanceID: 10834}
     - Class: 114
       Script: {instanceID: 11322}
+=======
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 10804}
     - Class: 114
+      Script: {instanceID: 10826}
+    - Class: 114
+      Script: {instanceID: 10834}
+>>>>>>> Stashed changes
+    - Class: 114
+      Script: {instanceID: 11398}
+    - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 11686}
     - Class: 114
       Script: {instanceID: 11708}
@@ -124,6 +189,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12448}
     - Class: 114
+=======
+      Script: {instanceID: 11650}
+    - Class: 114
+      Script: {instanceID: 11876}
+    - Class: 114
+      Script: {instanceID: 12046}
+    - Class: 114
+      Script: {instanceID: 12086}
+    - Class: 114
+      Script: {instanceID: 12118}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12448}
+    - Class: 114
+>>>>>>> Stashed changes
       Script: {instanceID: 12680}
     - Class: 115
       Script: {instanceID: 0}
@@ -193,10 +274,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10102}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 10490}
+=======
+      Script: {instanceID: 10348}
+>>>>>>> Stashed changes
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10660}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 10666}
     - Class: 114
       Script: {instanceID: 10802}
@@ -220,6 +306,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12332}
     - Class: 114
       Script: {instanceID: 12446}
+=======
+      Script: {instanceID: 10694}
+    - Class: 114
+      Script: {instanceID: 10836}
+    - Class: 114
+      Script: {instanceID: 11324}
+    - Class: 114
+      Script: {instanceID: 11398}
+    - Class: 114
+      Script: {instanceID: 11688}
+    - Class: 114
+      Script: {instanceID: 11710}
+    - Class: 114
+      Script: {instanceID: 11824}
+    - Class: 114
+      Script: {instanceID: 11960}
+    - Class: 114
+      Script: {instanceID: 12046}
+    - Class: 114
+      Script: {instanceID: 12196}
+    - Class: 114
+      Script: {instanceID: 12296}
+    - Class: 114
+      Script: {instanceID: 12450}
+>>>>>>> Stashed changes
     - Class: 114
       Script: {instanceID: 12680}
     - Class: 115
@@ -439,6 +550,21 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuFinJvJ
+  - hash:
+      serializedVersion: 2
+      Hash: ca322947b992d23e1c493d8709d4aca6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EstadoEsperandoReinicio
+  - hash:
+      serializedVersion: 2
+>>>>>>> Stashed changes
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -2060,5 +2186,11 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity
+<<<<<<< Updated upstream
   - Assets/Scenes/SampleScene.unity
   playerPath: C:/Users/LUCIO/Desktop/Proye2.apk
+=======
+  - Assets/Scenes/EscenaJvJ.unity
+  - Assets/Scenes/EscenaFinJvJ.unity
+  playerPath: C:/Users/iap/Desktop/proye1.apk
+>>>>>>> Stashed changes

@@ -5,8 +5,20 @@ using UnityEngine.UI;
 
 public class ControladorJuego : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public Jugador jugador1;
     public Jugador jugador2;
+=======
+    public int golesJugador1 = 0;
+    public int golesJugador2 = 0;
+    private int cantidadJugadores = 0;
+    private int jugadorControlado = 0;
+    private int jugadorQueSaca = 1;
+	private bool resetHost = false;
+
+    private bool reiniciaron = false;
+
+>>>>>>> Stashed changes
     public Disco disco;
 
     public GUI managerGUI;
@@ -120,5 +132,15 @@ public class ControladorJuego : MonoBehaviour
     public void cambiarEstado(EstadoAbstracto estadoNuevo)
     {
         estado = estadoNuevo;
+    }
+
+    public void reinicar()
+    {
+        reiniciaron = true;
+    }
+
+    public bool reiniciaronPartida()
+    {
+        return reiniciaron;
     }
 }
