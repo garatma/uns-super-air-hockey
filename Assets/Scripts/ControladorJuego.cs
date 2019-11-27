@@ -89,8 +89,6 @@ public class ControladorJuego : NetworkBehaviour
     [ClientRpc]
     public void RpcNuevoJugador(int cantidadJugadores, int golesJugador1, int golesJugador2, int quienSaca)
     {
-        Debug.Log(cantidadJugadores);
-        Debug.Log(quienSaca);
         this.cantidadJugadores = cantidadJugadores;
         this.golesJugador1 = golesJugador1;
         this.golesJugador2 = golesJugador2;

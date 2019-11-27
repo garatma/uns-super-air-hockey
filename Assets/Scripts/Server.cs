@@ -21,8 +21,8 @@ public class Server : NetworkManager
         NetworkServer.AddPlayerForConnection(conn, player);
 
         int golesJugador1 = juego.getGolesJugador1(),
-            golesJugador2 = juego.getGolesJugador2(),
-            quienSaca = juego.getJugadorQueSaca();
+        golesJugador2 = juego.getGolesJugador2(),
+        quienSaca = juego.getJugadorQueSaca();
         juego.RpcNuevoJugador(numPlayers, golesJugador1, golesJugador2, quienSaca);
     }
 
