@@ -19,7 +19,6 @@ public class EstadoGolJugador2 : EstadoGolAbstracto
         if (!typeof(EstadoFin).Equals(juego.estado.GetType()))
         {
             // Gol del Jugador2
-            juego.sacaJugador(1);
             juego.resetearDisco(-3.2f);
             juego.cambiarEstado(new EstadoSacaJugador1(juego));
         }

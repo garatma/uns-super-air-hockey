@@ -10,7 +10,6 @@ public class ControladorJuego : NetworkBehaviour
     public int golesJugador2 = 0;
     private int cantidadJugadores = 0;
     private int jugadorControlado = 0;
-    private int jugadorQueSaca = 1;
 	private bool resetHost = false;
 
     public Disco disco;
@@ -73,11 +72,11 @@ public class ControladorJuego : NetworkBehaviour
     [ClientRpc]
     public void RpcReiniciarTodo()
     {
+		Debug.Log("reseteando todo");
         resetearDisco(0.0f);
         disco.setDireccion(0.0f, 0.0f, 0.0f);
         disco.desactivar();
         cantidadJugadores = 0;
-        jugadorQueSaca = 1;
         golesJugador1 = 0;
         golesJugador2 = 0;
         managerGUI.habilitarBoton(false);
@@ -87,17 +86,18 @@ public class ControladorJuego : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcNuevoJugador(int cantidadJugadores, int golesJugador1, int golesJugador2, int quienSaca)
+    public void RpcNuevoJugador(int cantidadJugadores)
     {
+		Debug.Log(cantidadJugadores);
+		Debug.Log(this.cantidadJugadores);
+		Debug.Log(jugadorControlado);
         this.cantidadJugadores = cantidadJugadores;
-        this.golesJugador1 = golesJugador1;
-        this.golesJugador2 = golesJugador2;
-        managerGUI.setGoles(golesJugador1, golesJugador2);
         switch (cantidadJugadores)
         {
             case 1:
                 // el primer cliente viene por acá y controla al jugador1.
-                if (jugadorControlado == 0) jugadorControlado = 1;
+                if (jugadorControlado == 0) 
+					jugadorControlado = 1;
                 managerGUI.habilitarBoton(false);
 				disco.desactivar();
                 break;
@@ -106,27 +106,11 @@ public class ControladorJuego : NetworkBehaviour
                 // el segundo cliente viene por acá y controla al jugador2 y se actualiza al estado
                 // del servidor.
                 if (jugadorControlado == 0)
-                {
                     jugadorControlado = 2;
-                    if (quienSaca == 1)
-                        cambiarEstado(new EstadoSacaJugador1(this));
-                    else if (quienSaca == 2)
-                        cambiarEstado(new EstadoSacaJugador2(this));
-                }
                 managerGUI.habilitarBoton(true);
                 disco.activar();
                 break;
         }
-    }
-
-    public void sacaJugador(int jugador)
-    {
-        jugadorQueSaca = jugador;
-    }
-
-    public int getJugadorQueSaca()
-    {
-        return jugadorQueSaca;
     }
 
 	public bool inputHost()
@@ -192,15 +176,5 @@ public class ControladorJuego : NetworkBehaviour
     {
         golesJugador1++;
         cambiarEstado(new EstadoGolJugador1(this));
-    }
-
-    public int getGolesJugador1()
-    {
-        return golesJugador1;
-    }
-
-    public int getGolesJugador2()
-    {
-        return golesJugador2;
     }
 }

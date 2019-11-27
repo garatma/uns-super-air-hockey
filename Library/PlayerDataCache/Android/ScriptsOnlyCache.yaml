@@ -2110,4 +2110,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/EscenaMenu.unity
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/iap/Proyecto-IAP/Proye-Final1.apk
+  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk

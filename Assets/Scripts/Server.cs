@@ -20,10 +20,7 @@ public class Server : NetworkManager
         GameObject player = Instantiate(playerASpawnear, start.position, start.rotation);
         NetworkServer.AddPlayerForConnection(conn, player);
 
-        int golesJugador1 = juego.getGolesJugador1(),
-        golesJugador2 = juego.getGolesJugador2(),
-        quienSaca = juego.getJugadorQueSaca();
-        juego.RpcNuevoJugador(numPlayers, golesJugador1, golesJugador2, quienSaca);
+        juego.RpcNuevoJugador(numPlayers);
     }
 
     public override void OnServerDisconnect(NetworkConnection conn)
