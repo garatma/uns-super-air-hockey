@@ -13,12 +13,16 @@ public class EstadoFin : EstadoAbstracto
 
     public override void Ejecutar()
     {
-		juego.disco.desactivar();
-       
         // Realiza la acción correspondiente
+        
+        juego.disco.desactivar();
+        // juego.cambiarVista(1);
+
         if (juego.golesJugador1 == 10)
-			SceneManager.LoadScene(2);
+            juego.managerGUI.setMensajeControl("Ganó el jugador 1! Esperando que el host apriete algún botón para reiniciar.");
         else
-            SceneManager.LoadScene(3);
+            juego.managerGUI.setMensajeControl("Ganó el jugador 2! Esperando que el host apriete algún botón para reiniciar.");
+
+        juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
     }
 }

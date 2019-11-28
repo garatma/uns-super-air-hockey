@@ -11,10 +11,12 @@ public class ControladorJuego : NetworkBehaviour
     private int cantidadJugadores = 0;
     private int jugadorControlado = 0;
 	private bool resetHost = false;
+    private bool reiniciaron = false;
 
     public Disco disco;
 
     public GUI managerGUI;
+    public MenuManager managerMenu;
 
     public float tiempo;
 
@@ -83,6 +85,7 @@ public class ControladorJuego : NetworkBehaviour
 		managerGUI.setMensajeControl("");
         resetearDisco(0.0f);
         cambiarEstado(new EstadoInicio(this));
+        resetHost = false;
     }
 
     [ClientRpc]
@@ -176,5 +179,20 @@ public class ControladorJuego : NetworkBehaviour
     {
         golesJugador1++;
         cambiarEstado(new EstadoGolJugador1(this));
+    }
+
+    public void reinicar()
+    {
+        reiniciaron = true;
+    }
+
+    public bool reiniciaronPartida()
+    {
+        return reiniciaron;
+    }
+
+    public void cambiarVista(int vista)
+    {
+
     }
 }

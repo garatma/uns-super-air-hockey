@@ -18,6 +18,7 @@ public class EstadoInicio : EstadoAbstracto
         juego.golesJugador1 = 0;
         juego.golesJugador2 = 0;
         juego.managerGUI.setGoles(juego.golesJugador1, juego.golesJugador2);
+        juego.resetearControlReinicio();
 
         if (juego.jugadoresConectados() == 2)
         {
