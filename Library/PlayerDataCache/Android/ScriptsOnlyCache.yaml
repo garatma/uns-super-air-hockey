@@ -5,7 +5,6 @@ ScriptsOnlyBuild:
     - Disco
     - GUI
     - Jugador
-    - MenuPrincipal
     - Server
     Mirror.Components.dll:
     - Mirror.NetworkTransform
@@ -25,7 +24,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -68,6 +66,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
@@ -82,6 +82,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9790}
     - Class: 114
@@ -89,90 +91,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 9874}
-    - Class: 114
-      Script: {instanceID: 10042}
-    - Class: 114
-      Script: {instanceID: 10102}
-    - Class: 114
-      Script: {instanceID: 10492}
-    - Class: 114
-      Script: {instanceID: 10660}
-    - Class: 114
-      Script: {instanceID: 10668}
-    - Class: 114
-      Script: {instanceID: 10804}
-    - Class: 114
-      Script: {instanceID: 10826}
-    - Class: 114
-      Script: {instanceID: 10834}
-    - Class: 114
-      Script: {instanceID: 11400}
-    - Class: 114
-      Script: {instanceID: 11652}
-    - Class: 114
-      Script: {instanceID: 11878}
-    - Class: 114
-      Script: {instanceID: 12048}
-    - Class: 114
-      Script: {instanceID: 12088}
-    - Class: 114
-      Script: {instanceID: 12120}
-    - Class: 114
-      Script: {instanceID: 12336}
-    - Class: 114
-      Script: {instanceID: 12450}
-    - Class: 114
-      Script: {instanceID: 12682}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 258
-      Script: {instanceID: 0}
-    Assets/Scenes/EscenaMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 109
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9792}
-    - Class: 114
       Script: {instanceID: 9846}
+    - Class: 114
+      Script: {instanceID: 9874}
     - Class: 114
       Script: {instanceID: 9962}
     - Class: 114
       Script: {instanceID: 9966}
+    - Class: 114
+      Script: {instanceID: 10042}
     - Class: 114
       Script: {instanceID: 10054}
     - Class: 114
@@ -182,9 +109,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10348}
     - Class: 114
+      Script: {instanceID: 10492}
+    - Class: 114
       Script: {instanceID: 10660}
     - Class: 114
+      Script: {instanceID: 10668}
+    - Class: 114
       Script: {instanceID: 10694}
+    - Class: 114
+      Script: {instanceID: 10804}
+    - Class: 114
+      Script: {instanceID: 10826}
+    - Class: 114
+      Script: {instanceID: 10834}
     - Class: 114
       Script: {instanceID: 10836}
     - Class: 114
@@ -192,19 +129,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11400}
     - Class: 114
+      Script: {instanceID: 11652}
+    - Class: 114
       Script: {instanceID: 11690}
     - Class: 114
       Script: {instanceID: 11712}
     - Class: 114
       Script: {instanceID: 11826}
     - Class: 114
-      Script: {instanceID: 11962}
+      Script: {instanceID: 11878}
     - Class: 114
       Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12088}
+    - Class: 114
+      Script: {instanceID: 12120}
     - Class: 114
       Script: {instanceID: 12298}
+    - Class: 114
+      Script: {instanceID: 12336}
+    - Class: 114
+      Script: {instanceID: 12450}
     - Class: 114
       Script: {instanceID: 12452}
     - Class: 114
@@ -226,6 +171,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -2114,6 +2061,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/EscenaMenu.unity
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/iap/Documents/GitHub/Proyecto-IAP/proyeAir.apk
+  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk
