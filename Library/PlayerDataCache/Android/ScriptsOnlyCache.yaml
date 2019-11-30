@@ -195,7 +195,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: f8e0ab3d2e293bb142636b8aaf1f15c3
+      Hash: 1765ab715fdf2facf9e7bfb568a855ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControladorJuego
@@ -2062,4 +2062,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/mgara/proyecto-iap/Builds/build.apk
+  playerPath: D:/Proyecto-IAP-ALLs/Proyecto-IAP/Air-Hockey_v1.apk

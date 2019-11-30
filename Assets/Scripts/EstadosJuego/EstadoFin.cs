@@ -1,7 +1,7 @@
 using System;
 using UnityEngine.SceneManagement;
 
-public class EstadoFin : EstadoAbstracto
+public class EstadoFin : Estado
 {
     public ControladorJuego juego;
 

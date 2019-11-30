@@ -1,6 +1,6 @@
 using System;
 
-public class EstadoSacaJugador1 : EstadoAbstracto
+public class EstadoSacaJugador1 : Estado
 {
     public ControladorJuego juego;
 

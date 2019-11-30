@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EstadoEsperandoReinicio : EstadoAbstracto
+public class EstadoEsperandoReinicio : Estado
 {
     public ControladorJuego juego;
     private bool inputLocal = false;

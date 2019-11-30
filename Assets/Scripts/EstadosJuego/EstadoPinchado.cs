@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EstadoPinchado : EstadoAbstracto
+public class EstadoPinchado : Estado
 {
     public ControladorJuego juego;
     private bool inputLocal = false;

@@ -21,7 +21,7 @@ public class ControladorJuego : NetworkBehaviour
 
     public Camera camara;
 
-    public EstadoAbstracto estado;
+    public Estado estado;
 
     void Start()
     {
@@ -161,7 +161,7 @@ public class ControladorJuego : NetworkBehaviour
         tiempo = Time.time;
     }
 
-    public void cambiarEstado(EstadoAbstracto estadoNuevo)
+    public void cambiarEstado(Estado estadoNuevo)
     {
         estado = estadoNuevo;
     }

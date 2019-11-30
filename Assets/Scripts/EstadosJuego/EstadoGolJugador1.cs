@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EstadoGolJugador1 : EstadoGolAbstracto
+public class EstadoGolJugador1 : EstadoGol
 {
     public ControladorJuego juego;
 
