@@ -11,9 +11,6 @@ public class Server : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        // NOTA: NO CAMBIAR EL NOMBRE DE numPlayers, ES UN ATRIBUTO DE NetworkManager!!!
-
-
         Transform start = numPlayers == 0 ? spawnJugador1 : spawnJugador2;
         GameObject playerASpawnear;
         playerASpawnear = numPlayers == 0 ? jugador1 : jugador2;
@@ -41,12 +38,14 @@ public class Server : NetworkManager
 		base.OnStopHost();
 	}
 
-	public override void OnStartHost() {
+	public override void OnStartHost() 
+	{
     	juego.RpcReiniciarTodo();
 		base.OnStartHost();
     }
 
-	public override void OnStartServer() {
+	public override void OnStartServer() 
+	{
     	juego.RpcReiniciarTodo();
 		base.OnStartServer();
     }

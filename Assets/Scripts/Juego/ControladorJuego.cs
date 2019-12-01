@@ -10,12 +10,14 @@ public class ControladorJuego : NetworkBehaviour
     public int golesJugador2 = 0;
     private int cantidadJugadores = 0;
     private int jugadorControlado = 0;
-	private bool inputHost = false;
+
+	private bool reinicioPartida = false;
+	private bool reinicioPunto = false;
 
     public Disco disco;
 
     public GUI managerGUI;
-    public MenuManager managerMenu;
+    public Menus managerMenus;
 
     public float tiempo;
 
@@ -73,7 +75,8 @@ public class ControladorJuego : NetworkBehaviour
     [ClientRpc]
     public void RpcReiniciarTodo()
     {
-		Debug.Log("reseteando todo");
+		reinicioPuntoListo();
+		reinicioPartidaListo();
         resetearDisco(0.0f);
         disco.setearDireccion(0.0f, 0.0f, 0.0f);
         disco.desactivar();
@@ -82,17 +85,16 @@ public class ControladorJuego : NetworkBehaviour
         golesJugador2 = 0;
         managerGUI.habilitarBoton(false);
 		managerGUI.setearMensajeControl("");
+		managerMenus.mostrarInterfazNetwork(true);
         resetearDisco(0.0f);
         cambiarEstado(new EstadoInicio(this));
-        inputHost = false;
+		reinicioPartida = false;
+		reinicioPunto = false;
     }
 
     [ClientRpc]
     public void RpcConectarNuevoJugador(int cantidadJugadores)
     {
-		Debug.Log(cantidadJugadores);
-		Debug.Log(this.cantidadJugadores);
-		Debug.Log(jugadorControlado);
         this.cantidadJugadores = cantidadJugadores;
         switch (cantidadJugadores)
         {
@@ -101,6 +103,7 @@ public class ControladorJuego : NetworkBehaviour
                 if (jugadorControlado == 0) 
 					jugadorControlado = 1;
                 managerGUI.habilitarBoton(false);
+				managerMenus.mostrarInterfazNetwork(true);
 				disco.desactivar();
                 break;
             case 2:
@@ -110,35 +113,11 @@ public class ControladorJuego : NetworkBehaviour
                 if (jugadorControlado == 0)
                     jugadorControlado = 2;
                 managerGUI.habilitarBoton(true);
+				managerMenus.mostrarInterfazNetwork(false);
                 disco.activar();
                 break;
         }
     }
-
-	public bool chequearInputHost()
-	{
-		return inputHost;
-	}
-
-	// el server lo ejecuta
-	[Command]
-	public void CmdHostReset()
-	{
-		inputHost = true;
-		RpcResetear();
-	}
-
-	// lo ejecutan los clientes
-	[ClientRpc]
-	public void RpcResetear()
-	{
-		inputHost = true;
-	}
-	
-	public void resetearControlReinicio()
-	{
-		inputHost = false;
-	}
 
     public int obtenerJugadoresConectados()
     {
@@ -180,4 +159,49 @@ public class ControladorJuego : NetworkBehaviour
         cambiarEstado(new EstadoGolJugador1(this));
     }
 
+	[Command]
+	public void CmdReiniciarPartida()
+	{
+		reinicioPartida = true;
+		RpcReiniciarPartida();
+	}
+
+	[ClientRpc]
+	public void RpcReiniciarPartida()
+	{
+		reinicioPartida = true;
+	}
+
+	[Command]
+	public void CmdReiniciarPunto()
+	{
+		reinicioPunto = true;
+		RpcReiniciarPunto();
+	}
+
+	[ClientRpc]
+	public void RpcReiniciarPunto()
+	{
+		reinicioPunto = true;
+	}
+
+	public bool reiniciaronPartida()
+	{
+		return reinicioPartida;
+	}
+
+	public bool reiniciaronPunto()
+	{
+		return reinicioPunto;
+	}
+
+	public void reinicioPartidaListo()
+	{
+		reinicioPartida = false;
+	}
+
+	public void reinicioPuntoListo()
+	{
+		reinicioPunto = false;
+	}
 }

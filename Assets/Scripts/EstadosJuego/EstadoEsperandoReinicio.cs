@@ -4,7 +4,6 @@ using UnityEngine;
 public class EstadoEsperandoReinicio : Estado
 {
     public ControladorJuego juego;
-    private bool inputLocal = false;
 
     public EstadoEsperandoReinicio(ControladorJuego ctrlJuego)
     {
@@ -15,15 +14,13 @@ public class EstadoEsperandoReinicio : Estado
     public override void Ejecutar()
     {
         // Realiza la acción correspondiente
-		if (!inputLocal && base.chequearInputJugador())
+		
+		juego.disco.desactivar();
+
+		if (juego.reiniciaronPartida())
 		{
-			juego.CmdHostReset();
-			inputLocal = true;
-		}
-		if (juego.chequearInputHost())
-		{
-			inputLocal = false;
-			juego.resetearControlReinicio();
+			juego.reinicioPartidaListo();
+			juego.managerMenus.cambiarAPartida();
 			juego.cambiarEstado(new EstadoInicio(juego));
 		}
     }

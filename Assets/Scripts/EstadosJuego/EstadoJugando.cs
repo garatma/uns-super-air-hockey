@@ -18,9 +18,11 @@ public class EstadoJugando : Estado
 
         if (tiempo_actual - juego.tiempo > 7.0f)
         {
+
+			juego.reinicioPuntoListo();
             juego.disco.setearDireccion(0.0f, 0.0f, 0.0f);
-            juego.managerGUI.setearMensajeControl("Se pinchó!!!");
             juego.disco.desactivar();
+			juego.managerMenus.cambiarAMenuPinchado();
             juego.cambiarEstado(new EstadoPinchado(juego));
         }
     }

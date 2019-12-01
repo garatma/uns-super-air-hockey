@@ -18,10 +18,12 @@ public class EstadoFin : Estado
         juego.disco.desactivar();
 
         if (juego.golesJugador1 == 10)
-            juego.managerGUI.setearMensajeControl("Gan√≥ el jugador 1! Esperando que el host apriete alg√∫n bot√≥n para reiniciar.");
-        else
-            juego.managerGUI.setearMensajeControl("Gan√≥ el jugador 2! Esperando que el host apriete alg√∫n bot√≥n para reiniciar.");
+			juego.managerMenus.setearTextoFin("°GanÛ el jugador 1! Para reiniciar, el host debe apretar el botÛn");
+        else if (juego.golesJugador2 == 10)
+			juego.managerMenus.setearTextoFin("°GanÛ el jugador 2! Para reiniciar, el host debe apretar el botÛn");
 
+		juego.reinicioPartidaListo();
+		juego.managerMenus.cambiarAMenuReinicio();
         juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
     }
 }

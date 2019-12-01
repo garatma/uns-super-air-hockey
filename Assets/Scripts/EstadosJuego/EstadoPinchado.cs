@@ -4,7 +4,6 @@ using UnityEngine;
 public class EstadoPinchado : Estado
 {
     public ControladorJuego juego;
-    private bool inputLocal = false;
 
     public EstadoPinchado(ControladorJuego ctrlJuego)
     {
@@ -14,21 +13,17 @@ public class EstadoPinchado : Estado
 
     public override void Ejecutar()
     {
-        // Realiza la acciÃ³n correspondiente
+        // Realiza la acción correspondiente
 
-		if (!inputLocal && base.chequearInputJugador())
+		juego.disco.desactivar();
+
+		if (juego.reiniciaronPunto())
 		{
-			juego.CmdHostReset();
-			inputLocal = true;
-		}
-		if (juego.chequearInputHost())
-		{
-			inputLocal = false;
-			juego.resetearControlReinicio();
+			juego.reinicioPuntoListo();
             juego.disco.activar();
-            juego.managerGUI.setearMensajeControl("");
-            juego.resetearDisco(-3.2f);
-            juego.cambiarEstado(new EstadoSacaJugador1(juego));
+			juego.resetearDisco(-3.2f);
+			juego.managerMenus.cambiarAPartida();
+			juego.cambiarEstado(new EstadoSacaJugador1(juego));
 		}
     }
 }

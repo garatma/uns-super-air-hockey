@@ -17,8 +17,9 @@ public class EstadoInicio : Estado
         juego.managerGUI.setearMensajeControl("");
         juego.golesJugador1 = 0;
         juego.golesJugador2 = 0;
+		juego.reinicioPuntoListo();
+		juego.reinicioPartidaListo();
         juego.managerGUI.setearGoles(juego.golesJugador1, juego.golesJugador2);
-        juego.resetearControlReinicio();
 
         if (juego.obtenerJugadoresConectados() == 2)
         {

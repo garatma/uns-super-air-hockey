@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Disco\Disco.cs" />
-    <Compile Include="Assets\Scripts\EstadosJuego\EstadoAbstracto.cs" />
+    <Compile Include="Assets\Scripts\EstadosJuego\Estado.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoEsperandoReinicio.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoFin.cs" />
-    <Compile Include="Assets\Scripts\EstadosJuego\EstadoGolAbstracto.cs" />
+    <Compile Include="Assets\Scripts\EstadosJuego\EstadoGol.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoGolJugador1.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoGolJugador2.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoInicio.cs" />
@@ -75,9 +75,7 @@
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoPinchado.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoSacaJugador1.cs" />
     <Compile Include="Assets\Scripts\EstadosJuego\EstadoSacaJugador2.cs" />
-    <Compile Include="Assets\Scripts\GUI\Menús\MenuFinJvJ.cs" />
-    <Compile Include="Assets\Scripts\GUI\Menús\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\GUI\Menús\MenuPrincipal.cs" />
+    <Compile Include="Assets\Scripts\GUI\Menus\Menus.cs" />
     <Compile Include="Assets\Scripts\GUI\Tanteador + Mensajes de control\GUI.cs" />
     <Compile Include="Assets\Scripts\Juego\ControladorJuego.cs" />
     <Compile Include="Assets\Scripts\Jugador\IA.cs" />
