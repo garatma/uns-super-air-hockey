@@ -13,17 +13,20 @@ public class EstadoFin : Estado
 
     public override void Ejecutar()
     {
-        // Realiza la acciÃ³n correspondiente
+        // Realiza la accion correspondiente
         
         juego.disco.desactivar();
 
         if (juego.golesJugador1 == 10)
-			juego.managerMenus.setearTextoFin("¡Ganó el jugador 1! Para reiniciar, el host debe apretar el botón");
+        {
+            juego.managerMenus.cambiarAMenuReinicioGJ1();
+        }
         else if (juego.golesJugador2 == 10)
-			juego.managerMenus.setearTextoFin("¡Ganó el jugador 2! Para reiniciar, el host debe apretar el botón");
+        {
+            juego.managerMenus.cambiarAMenuReinicioGJ2();
+        }
 
 		juego.reinicioPartidaListo();
-		juego.managerMenus.cambiarAMenuReinicio();
-        juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
+		juego.cambiarEstado(new EstadoEsperandoReinicio(juego));
     }
 }

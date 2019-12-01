@@ -8,18 +8,34 @@ public class Disco : NetworkBehaviour
 	public ControladorJuego juego;
 	private Vector3 direccion;
     private float velocidad = 0.3f;
+    private Vector3 nuevaDireccion;
 
 	void Start()
 	{
 		desactivar();
 	}
 
-	[ServerCallback]
+    [ServerCallback]
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Bounce(collision.contacts[0].normal);
+    }
+
+    private void Bounce(Vector3 collisionNormal)
+    {
+        nuevaDireccion = Vector3.Reflect(direccion, collisionNormal);
+        Debug.Log(nuevaDireccion);
+    }
+
     void OnTriggerEnter(Collider colision)
 	{
 		GameObject obj = colision.gameObject;
-
         if (colision.gameObject.tag == "Jugador")
+        /*{
+            juego.colisionDiscoJugador();
+            direccion = nuevaDireccion;
+        }*/
         {
             juego.colisionDiscoJugador();
 
