@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Servidor"
+    "\\EstadosJuego"
   ],
-  "SelectedNode": "\\Servidor\\Servidor.cs",
+  "SelectedNode": "\\EstadosJuego\\EstadoGolJugador2.cs",
   "PreviewInSolutionExplorer": false
 }

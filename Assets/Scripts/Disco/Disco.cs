@@ -16,7 +16,6 @@ public class Disco : NetworkBehaviour
 	}
 
     [ServerCallback]
-
     private void OnCollisionEnter(Collision collision)
     {
         Bounce(collision.contacts[0].normal);

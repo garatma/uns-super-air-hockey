@@ -111,33 +111,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10352}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 10434}
     - Class: 114
-      Script: {instanceID: 10664}
+      Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10672}
+      Script: {instanceID: 10666}
     - Class: 114
-      Script: {instanceID: 10698}
+      Script: {instanceID: 10674}
     - Class: 114
-      Script: {instanceID: 10808}
+      Script: {instanceID: 10700}
     - Class: 114
-      Script: {instanceID: 10830}
+      Script: {instanceID: 10810}
     - Class: 114
-      Script: {instanceID: 10838}
+      Script: {instanceID: 10832}
     - Class: 114
       Script: {instanceID: 10840}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 10842}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11692}
+      Script: {instanceID: 11656}
     - Class: 114
-      Script: {instanceID: 11714}
+      Script: {instanceID: 11694}
     - Class: 114
-      Script: {instanceID: 11828}
+      Script: {instanceID: 11716}
+    - Class: 114
+      Script: {instanceID: 11830}
     - Class: 114
       Script: {instanceID: 12050}
     - Class: 114
@@ -154,8 +156,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12452}
     - Class: 114
       Script: {instanceID: 12682}
-    - Class: 114
-      Script: {instanceID: 19002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -423,6 +423,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: TransitionArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 18ccd31ee34dcc8cef9ddae05f1489fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Servidor
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -1989,14 +1995,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 18ccd31ee34dcc8cef9ddae05f1489fd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Servidor
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaJvJ.unity
   playerPath: D:/LuIn/Luciano/Aprendizajes/Universidad_Nacional_del_Sur/Ingenieria_de_Aplicaciones/Air-Hockey.
-    El Proye/Entrega Final/Ejecutables/SUPER AiR Hockey Final_v2.apk
+    El Proye/Entrega Final/Ejecutables/SUPER AiR Hockey Final_v3.apk

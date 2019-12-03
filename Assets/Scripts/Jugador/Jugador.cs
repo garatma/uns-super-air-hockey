@@ -10,7 +10,6 @@ public class Jugador : NetworkBehaviour
     private float anchoVentana, altoVentana;
 
     public int invertirMovJugador2 = 1;
-    private bool esPrimerUpdate = true;
     private Vector3 posicionInicial;
 
     void Start()
@@ -29,31 +28,20 @@ public class Jugador : NetworkBehaviour
             Vector3 posicionActual = Vector3.one;
             Vector3 posicionFinal = Vector3.one;
             Vector3 difPosicion = Vector3.one;
+
             posicionActual.x = (anchoArea / anchoVentana) * Input.mousePosition.x;
             posicionActual.z = (altoArea / altoVentana) * Input.mousePosition.y;
             posicionActual.x += area.transform.position.x - (anchoArea / 2.0f);
             posicionActual.z += area.transform.position.z - (altoArea / 2.0f);
+
             posicionActual.y = 0.32f;
-            
-            if (esPrimerUpdate)
-            {
-                posicionInicial = posicionActual;
-                esPrimerUpdate = false;
-            }
-            else
-            {
-                if (invertirMovJugador2 == -1)
-                {
-                    posicionActual.x = - posicionActual.x;
-                    posicionActual.z = -posicionActual.z;
-                    posicionFinal = posicionActual;
-                }
-                else
-                    posicionFinal = posicionActual;
 
-                transform.position = posicionFinal;
-            }
+            // invertirMovJugador2 == 1 --> Jugador 1
+            // invertirMovJugador2 == -1 --> Jugador 2
+            posicionActual.x = invertirMovJugador2 * posicionActual.x;
+            posicionActual.z = invertirMovJugador2 * posicionActual.z;
 
+            transform.position = posicionActual;
         }
     }
 }

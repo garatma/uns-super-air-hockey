@@ -14,7 +14,6 @@ public class EstadoFin : Estado
     public override void Ejecutar()
     {
         // Realiza la accion correspondiente
-        
         juego.disco.desactivar();
 
         if (juego.golesJugador1 == 10)
