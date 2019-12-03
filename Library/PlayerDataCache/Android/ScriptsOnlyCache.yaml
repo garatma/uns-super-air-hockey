@@ -45,6 +45,7 @@ ScriptsOnlyBuild:
     - DefaultInitializationErrorHandler
     - DefaultTrackableEventHandler
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/EscenaJvJ.unity:
@@ -1998,5 +1999,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: D:/LuIn/Luciano/Aprendizajes/Universidad_Nacional_del_Sur/Ingenieria_de_Aplicaciones/Air-Hockey.
-    El Proye/Entrega Final/Ejecutables/SUPER AiR Hockey Final_v3.apk
+  playerPath: C:/Users/manuel/proyecto-iap/Builds/SuperAiRHockey.apk
