@@ -222,7 +222,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 7b8458c01217568c72d60fdcce3f843c
+      Hash: ade339affe7f33cce282959161413997
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menus
@@ -1999,4 +1999,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/mgara/proyecto-iap/Builds/SuperAiRHockey.apk
+  playerPath: C:/Users/LUCIO/Desktop/proyeVideo2.apk

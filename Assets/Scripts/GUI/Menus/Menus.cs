@@ -47,11 +47,6 @@ public class Menus : MonoBehaviour
         botonReinicio1.onClick.AddListener(cambiarMenuReinicio);
         botonReinicio2.onClick.AddListener(cambiarMenuReinicio);
         botonPinchado.onClick.AddListener(cambiarMenuPinchado);
-
-        // botonPinchado.interactable = false;
-        // botonReinicio.interactable = false;
-
-		// CmdHabilitarBotonesServidor();
     }
 
     void Update() { }

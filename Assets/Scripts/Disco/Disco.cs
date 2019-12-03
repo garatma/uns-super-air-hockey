@@ -25,17 +25,13 @@ public class Disco : NetworkBehaviour
     private void Bounce(Vector3 collisionNormal)
     {
         nuevaDireccion = Vector3.Reflect(direccion, collisionNormal);
-        Debug.Log(nuevaDireccion);
     }
 
     void OnTriggerEnter(Collider colision)
 	{
 		GameObject obj = colision.gameObject;
         if (colision.gameObject.tag == "Jugador")
-        /*{
-            juego.colisionDiscoJugador();
-            direccion = nuevaDireccion;
-        }*/
+        
         {
             juego.colisionDiscoJugador();
 

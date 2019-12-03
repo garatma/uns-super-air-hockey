@@ -21,7 +21,7 @@ public class EstadoInicio : Estado
 		juego.reinicioPartidaListo();
         juego.managerGUI.setearGoles(juego.golesJugador1, juego.golesJugador2);
 
-        if (juego.obtenerJugadoresConectados() == 1)
+        if (juego.obtenerJugadoresConectados() == 2)
         {
             juego.resetearDisco(-3.2f);
             juego.disco.activar();
