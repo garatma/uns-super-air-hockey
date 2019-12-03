@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Servidor"
   ],
-  "SelectedNode": "\\Juego",
+  "SelectedNode": "\\Servidor\\Servidor.cs",
   "PreviewInSolutionExplorer": false
 }

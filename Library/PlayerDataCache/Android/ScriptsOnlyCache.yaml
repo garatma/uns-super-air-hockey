@@ -6,7 +6,7 @@ ScriptsOnlyBuild:
     - GUI
     - Jugador
     - Menus
-    - Server
+    - Servidor
     Mirror.Components.dll:
     - Mirror.NetworkTransform
     Mirror.dll:
@@ -45,7 +45,6 @@ ScriptsOnlyBuild:
     - DefaultInitializationErrorHandler
     - DefaultTrackableEventHandler
     com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/EscenaJvJ.unity:
@@ -140,8 +139,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 11880}
-    - Class: 114
       Script: {instanceID: 12050}
     - Class: 114
       Script: {instanceID: 12090}
@@ -157,6 +154,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12452}
     - Class: 114
       Script: {instanceID: 12682}
+    - Class: 114
+      Script: {instanceID: 19002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1260,12 +1259,6 @@ ScriptsOnlyBuild:
     className: TMP_FrameRateCounter
   - hash:
       serializedVersion: 2
-      Hash: 18ccd31ee34dcc8cef9ddae05f1489fd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Server
-  - hash:
-      serializedVersion: 2
       Hash: a1ca1237bad0f30ea5ba8f4060929114
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1996,7 +1989,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 18ccd31ee34dcc8cef9ddae05f1489fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Servidor
   platform: 13
   scenePathNames:
   - Assets/Scenes/EscenaJvJ.unity
-  playerPath: C:/Users/LUCIO/Desktop/proyeVideo2.apk
+  playerPath: D:/LuIn/Luciano/Aprendizajes/Universidad_Nacional_del_Sur/Ingenieria_de_Aplicaciones/Air-Hockey.
+    El Proye/Entrega Final/Ejecutables/SUPER AiR Hockey Final_v2.apk
