@@ -1,17 +1,17 @@
 # Super AiR Hockey
 
-Juego multijugador (WiFi) de hockey de aire en realidad mixta (AR + VR), realizado en Unity con C#, diseñado e implementado teniendo en cuenta patrones de diseño y reglas de _clean code_ para dispositivos móviles Android, como parte del proyecto de la materia _Ingeniería de Aplicaciones_ de la carrera _Ingeniería en Computación_ de la _Universidad Nacional del Sur_ en el segundo cuatrimestre del 2019.
+Multiplayer air hockey video-game in mixed reality (AR + VR) made with Unity and C#. Designed and developed with design patters and clean code principles for Android smartphones, as part of the project of the _Application Engineering_ course for the degree of _Computer Engineering_ of the _Universidad Nacional del Sur_ in 2019.
 
-Para más información, mirar la [presentación](https://github.com/garatma/super-air-hockey/raw/master/presentaci%C3%B3n/presentaci%C3%B3n-iap.pdf).
+For more information, check out the [presentation](https://github.com/garatma/super-air-hockey/raw/master/presentaci%C3%B3n/presentaci%C3%B3n-iap.pdf).
 
-# Herramientas
+# Technology
 
-- Unity (entorno)
-- C# (lenguaje de programación)
-- Módulo Vuforia (para la realidad aumentada)
-- API Mirror (para la conexión entre jugadores)
+- Unity (deveolpment environment)
+- C# (programming language)
+- Vuforia module (mixed reality)
+- Mirror API (networking)
 
-# Integrantes
+# Team
 
 - Lucio Arce
 - Manuel Garat
