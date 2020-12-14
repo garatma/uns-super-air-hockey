@@ -6,7 +6,7 @@ For more information, check out the [presentation](https://github.com/garatma/su
 
 # Technology
 
-- Unity (deveolpment environment)
+- Unity (development environment)
 - C# (programming language)
 - Vuforia module (mixed reality)
 - Mirror API (networking)
